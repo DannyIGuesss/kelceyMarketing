@@ -41,7 +41,7 @@ export default function Experience() {
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-20 md:px-10 md:pt-28">
         <p className="font-script text-lg text-clay">Portfolio</p>
         <h1 className="mt-2 font-display text-4xl md:text-5xl">Experience & Work</h1>
-        <p className="mt-4 max-w-xl text-ink/70">
+        <p className="mt-4 max-w-xl text-ink">
           A look at the studios I've worked with and what we built together.
         </p>
       </section>
@@ -59,7 +59,7 @@ export default function Experience() {
               <div>
                 <p className="text-[11px] uppercase tracking-[0.2em] text-clay">{w.tag}</p>
                 <h2 className="mt-2 font-display text-3xl">{w.name}</h2>
-                <p className="mt-4 text-ink/75">{w.blurb}</p>
+                <p className="mt-4 text-ink">{w.blurb}</p>
               </div>
             </article>
           ))}

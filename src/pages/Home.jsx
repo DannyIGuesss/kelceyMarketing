@@ -40,7 +40,7 @@ export default function Home() {
             Instructor first. <br /> Marketer by trade.
           </h2>
         </div>
-        <div className="flex flex-col gap-5 text-ink/80">
+        <div className="flex flex-col gap-5 text-ink">
           <p>
             Before I ever opened a spreadsheet of engagement metrics, I was teaching Pilates —
             which means I understand a studio's world from the inside: the way a good class
@@ -72,7 +72,7 @@ export default function Home() {
             ].map((s) => (
               <div key={s.label} className="border-t border-line pt-6">
                 <h3 className="font-display text-xl">{s.label}</h3>
-                <p className="mt-2 text-sm text-ink/70">{s.desc}</p>
+                <p className="mt-2 text-sm text-ink">{s.desc}</p>
               </div>
             ))}
           </div>

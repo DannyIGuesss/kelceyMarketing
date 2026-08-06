@@ -40,7 +40,7 @@ export default function Services() {
       <section className="mx-auto max-w-6xl px-6 pb-4 pt-20 md:px-10 md:pt-28">
         <p className="font-script text-lg text-clay">What I offer</p>
         <h1 className="mt-2 font-display text-4xl md:text-5xl">Services & Pricing</h1>
-        <p className="mt-4 max-w-xl text-ink/70">
+        <p className="mt-4 max-w-xl text-ink">
           Marketing support built specifically for boutique studios — pick one service or bundle
           all three.
         </p>
@@ -51,7 +51,7 @@ export default function Services() {
           {SERVICES.map((s) => (
             <div key={s.name} className="border-t border-line pt-6">
               <h2 className="font-display text-xl">{s.name}</h2>
-              <ul className="mt-4 space-y-2 text-sm text-ink/75">
+              <ul className="mt-4 space-y-2 text-sm text-ink">
                 {s.items.map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="h-1 w-1 rounded-full bg-clay" /> {item}
@@ -81,11 +81,11 @@ export default function Services() {
                 <p className={`font-display text-lg ${p.featured ? "text-sand" : "text-clay"}`}>
                   {p.price}
                 </p>
-                <p className={`text-sm ${p.featured ? "text-paper/75" : "text-ink/70"}`}>{p.desc}</p>
+                <p className={`text-sm ${p.featured ? "text-paper/75" : "text-ink"}`}>{p.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-sm text-ink/50">
+          <p className="mt-6 text-sm text-ink">
             Pricing shown is placeholder — replace with real package rates before launch.
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function Services() {
       <section id="contact" className="mx-auto max-w-3xl px-6 py-24 md:px-10 md:py-32">
         <p className="font-script text-lg text-clay">Get in touch</p>
         <h2 className="mt-2 font-display text-3xl md:text-4xl">Book a Free Consultation</h2>
-        <p className="mt-4 text-ink/70">
+        <p className="mt-4 text-ink">
           Tell me a bit about your studio and what you're looking for — I'll follow up to set up
           a time to talk.
         </p>
