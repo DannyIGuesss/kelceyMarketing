@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Playfair+Display:ital@1&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -11,9 +11,9 @@
   --color-clay: #8a7a63;
   --color-line: #ddd3c2;
 
-  --font-display: "Bodoni Moda", serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-script: "Playfair Display", serif;
-  --font-body: "Inter", sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html {

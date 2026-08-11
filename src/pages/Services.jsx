@@ -49,15 +49,20 @@ export default function Services() {
       <section className="mx-auto max-w-6xl px-6 py-16 md:px-10">
         <div className="grid gap-10 md:grid-cols-3">
           {SERVICES.map((s) => (
-            <div key={s.name} className="border-t border-line pt-6">
-              <h2 className="font-display text-xl">{s.name}</h2>
-              <ul className="mt-4 space-y-2 text-sm text-ink">
-                {s.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-clay" /> {item}
-                  </li>
-                ))}
-              </ul>
+            <div
+              key={s.name}
+              className="overflow-hidden rounded-lg border border-transparent shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-line hover:shadow-2xl"
+            >
+              <div className="p-8 text-ink">
+                <h2 className="font-display text-xl">{s.name}</h2>
+                <ul className="mt-4 space-y-2 text-sm">
+                  {s.items.map((item) => (
+                    <li key={item} className="flex items-center gap-2">
+                      <span className="h-1 w-1 rounded-full bg-ink" /> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
@@ -73,15 +78,11 @@ export default function Services() {
             {PACKAGES.map((p) => (
               <div
                 key={p.name}
-                className={`flex flex-col gap-4 rounded-lg border p-8 ${
-                  p.featured ? "border-ink bg-ink text-paper" : "border-line bg-paper"
-                }`}
+                className="flex flex-col gap-4 rounded-lg border border-transparent bg-paper p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-line hover:shadow-2xl"
               >
                 <h3 className="font-display text-2xl">{p.name}</h3>
-                <p className={`font-display text-lg ${p.featured ? "text-sand" : "text-clay"}`}>
-                  {p.price}
-                </p>
-                <p className={`text-sm ${p.featured ? "text-paper/75" : "text-ink"}`}>{p.desc}</p>
+                <p className="font-display text-lg text-clay">{p.price}</p>
+                <p className="text-sm text-ink">{p.desc}</p>
               </div>
             ))}
           </div>

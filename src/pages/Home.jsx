@@ -1,13 +1,19 @@
 import { Link } from "react-router-dom";
-import PhotoPlaceholder from "../components/PhotoPlaceholder";
 import ScoreboardTicker from "../components/ScoreboardTicker";
+import heroPhoto from "../assets/randomwomen.jpg";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <section className="grid md:grid-cols-2">
-        <PhotoPlaceholder label="Kelcey — hero portrait" className="h-[70vh] md:h-[85vh]" />
+        <div className="flex h-[70vh] items-center justify-center bg-ink md:h-[85vh]">
+          <img
+            src={heroPhoto}
+            alt="Kelcey — hero portrait"
+            className="h-3/4 w-3/4 object-cover"
+          />
+        </div>
         <div className="flex flex-col justify-center gap-6 bg-ink px-8 py-16 text-paper md:px-16">
           <p className="font-script text-lg text-sand">Social · Event · Email Marketing</p>
           <h1 className="font-display text-4xl leading-[1.05] md:text-5xl">
@@ -70,7 +76,10 @@ export default function Home() {
               { label: "Event Marketing", desc: "Grand openings, studio launches, influencer events, weddings." },
               { label: "Email Marketing", desc: "Newsletters, promotional sends, event announcements." },
             ].map((s) => (
-              <div key={s.label} className="border-t border-line pt-6">
+              <div
+                key={s.label}
+                className="overflow-hidden rounded-lg border border-transparent p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-line hover:shadow-2xl"
+              >
                 <h3 className="font-display text-xl">{s.label}</h3>
                 <p className="mt-2 text-sm text-ink">{s.desc}</p>
               </div>
@@ -85,11 +94,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      {/* Announcement bar */}
-      <div className="bg-sand py-3 text-center text-[11px] uppercase tracking-[0.25em] text-ink">
-        Now booking studios for {new Date().toLocaleString("default", { month: "long" })} 2026
-      </div>
     </>
   );
 }

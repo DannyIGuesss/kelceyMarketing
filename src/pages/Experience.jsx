@@ -1,4 +1,6 @@
 import PhotoPlaceholder from "../components/PhotoPlaceholder";
+import pilatesPhoto from "../assets/pilates.jpg";
+import fvePhoto from "../assets/socialmedia.jpg";
 
 const WORK = [
   {
@@ -7,6 +9,7 @@ const WORK = [
     blurb:
       "Rebuilt the studio's content calendar and ran their grand-opening campaign — placeholder copy, swap in real numbers/story once available.",
     photoLabel: "Pilates Glow Studio — work sample",
+    photo: pilatesPhoto,
   },
   {
     name: "FVE",
@@ -14,6 +17,7 @@ const WORK = [
     blurb:
       "Ongoing monthly newsletter and social content management — placeholder copy, swap in real details once available.",
     photoLabel: "FVE — work sample",
+    photo: fvePhoto,
   },
 ];
 
@@ -55,7 +59,15 @@ export default function Experience() {
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <PhotoPlaceholder label={w.photoLabel} className="h-80 md:h-96" />
+              {w.photo ? (
+                <img
+                  src={w.photo}
+                  alt={w.photoLabel}
+                  className="h-80 w-full object-cover md:h-96"
+                />
+              ) : (
+                <PhotoPlaceholder label={w.photoLabel} className="h-80 md:h-96" />
+              )}
               <div>
                 <p className="text-[11px] uppercase tracking-[0.2em] text-clay">{w.tag}</p>
                 <h2 className="mt-2 font-display text-3xl">{w.name}</h2>
