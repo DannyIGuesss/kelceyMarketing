@@ -1,6 +1,9 @@
 import PhotoPlaceholder from "../components/PhotoPlaceholder";
 import pilatesPhoto from "../assets/pilates.jpg";
 import fvePhoto from "../assets/socialmedia.jpg";
+import chaircandlePhoto from "../assets/chaircandle.jpg";
+import sandbookPhoto from "../assets/sandbook.jpg";
+import cityphonePhoto from "../assets/phonecity.jpg";
 
 const WORK = [
   {
@@ -26,16 +29,19 @@ const REVIEWS = [
     quote: "Placeholder testimonial — real client quote goes here once collected.",
     name: "Studio Owner",
     studio: "Pilates Glow Studio",
+    photo: chaircandlePhoto,
   },
   {
     quote: "Placeholder testimonial — real client quote goes here once collected.",
     name: "Studio Owner",
     studio: "FVE",
+    photo: sandbookPhoto,
   },
   {
     quote: "Placeholder testimonial — real client quote goes here once collected.",
     name: "Studio Owner",
     studio: "Client Name",
+    photo: cityphonePhoto,
   },
 ];
 
@@ -79,20 +85,30 @@ export default function Experience() {
       </section>
 
       {/* Reviews */}
-      <section className="bg-ink px-6 py-24 text-paper md:px-10 md:py-32">
-        <div className="mx-auto max-w-6xl">
-          <p className="font-script text-lg text-sand">Kind words</p>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl">From Past Clients</h2>
+      <section className="flex min-h-175 flex-col justify-center overflow-hidden bg-ink px-6 py-24 text-paper md:px-10 md:py-32">
+        <div className="mx-auto grid w-full max-w-6xl">
+          <div className="col-start-1 row-start-1 hidden px-8 opacity-50 md:flex">
+            <img src={chaircandlePhoto} alt="" className="h-full w-1/3 object-cover" />
+            <img src={sandbookPhoto} alt="" className="h-full w-1/3 object-cover" />
+            <img src={cityphonePhoto} alt="" className="h-full w-1/3 object-cover" />
+          </div>
+          <div className="relative col-start-1 row-start-1 px-8">
+            <p className="font-script text-lg text-sand">Kind words</p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">From Past Clients</h2>
 
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {REVIEWS.map((r, i) => (
-              <blockquote key={i} className="border-t border-white/15 pt-6">
-                <p className="font-display text-lg leading-snug text-paper/90">"{r.quote}"</p>
-                <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/50">
-                  {r.name} — {r.studio}
-                </footer>
-              </blockquote>
-            ))}
+            <div className="mt-12 grid gap-10 md:grid-cols-3">
+              {REVIEWS.map((r, i) => (
+                <blockquote
+                  key={i}
+                  className="flex min-h-56 flex-col items-center justify-between rounded-lg bg-paper p-6 text-center text-ink shadow-lg shadow-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/60"
+                >
+                  <p className="font-display text-lg leading-snug">"{r.quote}"</p>
+                  <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-clay">
+                    {r.name} — {r.studio}
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
           </div>
         </div>
       </section>

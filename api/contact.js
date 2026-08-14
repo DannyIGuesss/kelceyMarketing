@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, studio, message, company } = req.body || {};
+  const { name, email, studio, website, message, challenges, budget, company } = req.body || {};
 
   // Honeypot: real visitors never see or fill this field, so a non-empty
   // value means a bot filled the form. Pretend success without emailing.
@@ -44,7 +44,11 @@ export default async function handler(req, res) {
         to: process.env.CONTACT_TO_EMAIL,
         reply_to: email,
         subject: `New consult request from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nStudio: ${studio || "—"}\n\nMessage:\n${message}`,
+        text: `Name: ${name}\nEmail: ${email}\nStudio: ${studio || "—"}\nWebsite/Instagram: ${
+          website || "—"
+        }\nBudget range: ${budget || "—"}\n\nWhat support are you looking for?\n${message}\n\nCurrent marketing challenges:\n${
+          challenges || "—"
+        }`,
       }),
     });
 

@@ -2,7 +2,16 @@ import { useState } from "react";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
-  const [form, setForm] = useState({ name: "", email: "", studio: "", message: "", company: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    studio: "",
+    website: "",
+    message: "",
+    challenges: "",
+    budget: "",
+    company: "",
+  });
 
   function handleChange(e) {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -19,7 +28,16 @@ export default function ContactForm() {
       });
       if (!res.ok) throw new Error("Request failed");
       setStatus("sent");
-      setForm({ name: "", email: "", studio: "", message: "" });
+      setForm({
+        name: "",
+        email: "",
+        studio: "",
+        website: "",
+        message: "",
+        challenges: "",
+        budget: "",
+        company: "",
+      });
     } catch {
       setStatus("error");
     }
@@ -40,21 +58,25 @@ export default function ContactForm() {
         <Field label="Name" name="name" value={form.name} onChange={handleChange} required />
         <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
       </div>
-      <Field label="Studio / Business Name" name="studio" value={form.studio} onChange={handleChange} />
-      <div>
-        <label htmlFor="message" className="mb-2 block text-[11px] uppercase tracking-[0.2em] text-clay">
-          What are you looking for help with?
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          value={form.message}
-          onChange={handleChange}
-          required
-          className="w-full rounded-md border border-ink bg-transparent px-3 py-2 font-body text-ink outline-none focus:border-ink"
-        />
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Business / Studio Name" name="studio" value={form.studio} onChange={handleChange} />
+        <Field label="Website / Instagram" name="website" value={form.website} onChange={handleChange} />
       </div>
+      <Textarea
+        label="What support are you looking for?"
+        name="message"
+        value={form.message}
+        onChange={handleChange}
+        required
+      />
+      <Textarea
+        label="Current marketing challenges"
+        name="challenges"
+        value={form.challenges}
+        onChange={handleChange}
+        rows={3}
+      />
+      <Field label="Budget range (optional)" name="budget" value={form.budget} onChange={handleChange} />
 
       <div className="hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>
@@ -82,7 +104,7 @@ export default function ContactForm() {
         disabled={status === "sending"}
         className="mt-2 w-fit rounded-full bg-ink px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-ink-soft disabled:opacity-60"
       >
-        {status === "sending" ? "Sending…" : "Send Message"}
+        {status === "sending" ? "Sending…" : "Submit Inquiry"}
       </button>
     </form>
   );
@@ -96,6 +118,25 @@ function Field({ label, name, value, onChange, type = "text", required }) {
         id={name}
         type={type}
         name={name}
+        value={value}
+        onChange={onChange}
+        required={required}
+        className="w-full rounded-md border border-ink bg-transparent px-3 py-2 font-body text-ink outline-none focus:border-ink"
+      />
+    </div>
+  );
+}
+
+function Textarea({ label, name, value, onChange, required, rows = 4 }) {
+  return (
+    <div>
+      <label htmlFor={name} className="mb-2 block text-[11px] uppercase tracking-[0.2em] text-clay">
+        {label}
+      </label>
+      <textarea
+        id={name}
+        name={name}
+        rows={rows}
         value={value}
         onChange={onChange}
         required={required}
