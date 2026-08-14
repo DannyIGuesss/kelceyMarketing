@@ -10,7 +10,7 @@ export default function ScoreboardTicker() {
   const track = [...RESULTS, ...RESULTS];
 
   return (
-    <div className="overflow-hidden border-y border-line bg-ink py-3">
+    <div className="overflow-hidden border-y border-white/10 bg-charcoal py-3">
       <div className="flex w-max animate-[scoreboard_28s_linear_infinite] gap-10">
         {track.map((item, i) => (
           <span

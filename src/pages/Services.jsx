@@ -78,7 +78,7 @@ export default function Services() {
             </p>
           </div>
           <div className="flex h-64 items-center justify-center md:h-auto md:max-h-112.5">
-            <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] object-cover" />
+            <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] rounded-lg object-cover" />
           </div>
         </div>
       </section>

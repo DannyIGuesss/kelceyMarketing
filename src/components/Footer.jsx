@@ -1,46 +1,44 @@
-import { useLocation } from "react-router-dom";
+import instagramIcon from "../assets/insta.png";
+import linkedinIcon from "../assets/linkedin.png";
 
 export default function Footer() {
-  const { pathname } = useLocation();
-  const isExperience = pathname === "/experience";
-
   return (
-    <footer
-      className={`px-6 py-14 md:px-10 ${
-        isExperience ? "bg-paper-dim text-ink" : "bg-ink text-paper"
-      }`}
-    >
+    <footer className="bg-charcoal px-6 py-14 text-paper md:px-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
         <div>
           <p className="font-script text-2xl">Let's talk</p>
           <a
-            href="mailto:hello@kelceyandco.com"
+            href="mailto:kelceydelatorre2121@icloud.com"
             className="mt-2 block font-display text-2xl hover:text-sand md:text-3xl"
           >
-            hello@kelceyandco.com
+            kelceydelatorre2121@icloud.com
           </a>
         </div>
 
-        <div
-          className={`flex gap-6 text-[11px] uppercase tracking-[0.2em] ${
-            isExperience ? "text-clay" : "text-paper/70"
-          }`}
-        >
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hover:text-sand">
+        <div className="flex items-end gap-6 text-[11px] uppercase tracking-[0.2em] text-paper/70">
+          <a
+            href="https://www.instagram.com/pilatesglow.studio/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center gap-1 hover:text-sand"
+          >
+            <img src={instagramIcon} alt="" className="h-15 w-15" />
             Instagram
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-sand">
+          <a
+            href="https://www.linkedin.com/in/kelcey-de-la-torre-066698328/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-col items-center gap-1 hover:text-sand"
+          >
+            <img src={linkedinIcon} alt="" className="h-15 w-15" />
             LinkedIn
           </a>
         </div>
       </div>
 
-      <div
-        className={`mx-auto mt-10 max-w-6xl border-t pt-6 text-[11px] uppercase tracking-[0.15em] ${
-          isExperience ? "border-ink/10 text-ink/60" : "border-white/10 text-paper/40"
-        }`}
-      >
-        © {new Date().getFullYear()} Kelcey & Co. — Social, Event & Email Marketing for Studios
+      <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.15em] text-paper/40">
+        © {new Date().getFullYear()} Lotus Socials — Social, Event & Email Marketing for Studios
       </div>
     </footer>
   );

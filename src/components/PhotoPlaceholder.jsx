@@ -1,7 +1,7 @@
 export default function PhotoPlaceholder({ label, className = "" }) {
   return (
     <div
-      className={`relative flex items-end justify-start overflow-hidden bg-ink ${className}`}
+      className={`relative flex items-end justify-start overflow-hidden rounded-lg bg-ink ${className}`}
       style={{
         backgroundImage:
           "radial-gradient(circle at 30% 20%, var(--color-ink-soft) 0%, var(--color-ink) 65%)",

@@ -12,10 +12,10 @@ export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-ink text-paper border-b border-white/10">
+    <header className="sticky top-0 z-50 bg-charcoal text-paper border-b border-white/10">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 md:px-10">
         <Link to="/" className="font-script text-xl tracking-wide">
-          Kelcey <span className="not-italic font-display text-sm tracking-[0.3em] uppercase align-middle">& Co.</span>
+          Lotus <span className="not-italic font-display text-sm tracking-[0.3em] uppercase align-middle">Socials</span>
         </Link>
 
         <ul className="hidden gap-8 md:flex">
