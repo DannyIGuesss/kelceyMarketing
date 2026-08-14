@@ -81,6 +81,12 @@ export default function Home() {
               <div key={s.label} className="overflow-hidden rounded-lg">
                 <Link to="/services" className="mx-auto mt-8 block w-2/3">
                   <video
+                    ref={(el) => {
+                      if (el) {
+                        el.muted = true;
+                        el.play().catch(() => {});
+                      }
+                    }}
                     src={s.video}
                     autoPlay
                     muted
