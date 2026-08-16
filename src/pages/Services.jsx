@@ -89,17 +89,22 @@ export default function Services() {
           <p className="font-script text-lg text-clay">Packages</p>
           <h2 className="mt-2 font-display text-3xl md:text-4xl">Find your fit</h2>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {PACKAGES.map((p) => (
-              <div
-                key={p.name}
-                className="flex flex-col gap-4 rounded-lg border border-transparent bg-paper p-8 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-line hover:shadow-2xl"
-              >
-                <h3 className="font-display text-2xl">{p.name}</h3>
-                <p className="font-display text-lg text-clay">{p.price}</p>
-                <p className="text-sm text-ink">{p.desc}</p>
-              </div>
-            ))}
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
+            <div className="h-80 overflow-hidden rounded-lg md:h-auto">
+              <img src={wheatPhoto} alt="" className="h-full w-full object-cover" />
+            </div>
+
+            <div className="flex flex-col justify-center divide-y-2 divide-ink">
+              {PACKAGES.map((p, i) => (
+                <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
+                  <h3 className="font-accent text-3xl tracking-wide text-ink transition-colors group-hover:text-clay md:text-4xl">
+                    {String(i + 1).padStart(2, "0")} / {p.name}
+                  </h3>
+                  <p className="mt-2 font-display text-sm text-clay">{p.price}</p>
+                  <p className="mt-2 max-w-md text-sm text-ink/70">{p.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mx-auto mt-10 w-fit rounded-full border border-ink bg-ink px-6 py-3 text-center">

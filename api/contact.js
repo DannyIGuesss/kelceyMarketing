@@ -40,7 +40,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Kelcey & Co. Website <onboarding@resend.dev>", // swap once a domain is verified in Resend
+        from: "Heart & Glass Socials Website <onboarding@resend.dev>", // swap once a domain is verified in Resend
         to: process.env.CONTACT_TO_EMAIL,
         reply_to: email,
         subject: `New consult request from ${name}`,

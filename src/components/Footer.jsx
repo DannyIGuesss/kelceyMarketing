@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.15em] text-paper/40">
-        © {new Date().getFullYear()} Lotus Socials — Social, Event & Email Marketing for Studios
+        © {new Date().getFullYear()} Heart & Glass Socials — Social, Event & Email Marketing for Studios
       </div>
     </footer>
   );
