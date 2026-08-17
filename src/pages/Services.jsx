@@ -1,18 +1,69 @@
 import ContactForm from "../components/ContactForm";
 import wheatPhoto from "../assets/wheat.jpg";
-import content from "../../content/services.json";
 
-const SERVICES = content.categories;
-const PACKAGES = content.packages;
+const SERVICES = [
+  {
+    name: "SOCIAL MEDIA",
+    items: ["Content calendar", "Posting", "Community management", "Monthly analytics"],
+  },
+  {
+    name: "EVENT MARKETING",
+    items: ["Grand openings", "Weddings", "Studio launches", "Influencer events"],
+  },
+  {
+    name: "EMAIL/PROMOTIONS",
+    items: ["Weekly email blasts", "Membership promos", "Studio updates", "Campaign support"],
+  },
+  {
+    name: "STRATEGY",
+    items:["Monthly calendar", "Competitor research", "Trend research", "Local audience strategy"]
+  },
+  {
+    name: "ANALYTICS",
+    items:["Reports every 2 weeks", "Reach/Engagement", "Reel views/Clicks", "Top content"]
+  },
+  {
+    name: "COMMUNITY/EVENTS",
+    items:["Collaborations", "Event planning assistance", "Instructor features", "Member milestone"]
+  }
+];
 
-function BulletList({ items, separatorClassName = "font-black text-base" }) {
-  return items.map((item, i) => (
-    <span key={i}>
-      {i > 0 && <span className={separatorClassName}> • </span>}
-      {item}
-    </span>
-  ));
-}
+const PACKAGES = [
+  {
+    name: "STARTER SOCIAL",
+    price: "from $750/mo",
+    desc: (
+  <>
+    feed posts <span className="font-black text-base">•</span> basic calendar{" "}
+    <span className="font-black text-base">•</span> light engagement{" "}
+    <span className="font-black text-base">•</span> promos
+  </>
+),
+  },
+  {
+    name: "GROWTH PARTNER",
+    price: "from $1250/mo",
+    desc: (
+  <>
+    posts <span className="font-black text-base">•</span> stories{" "}
+    <span className="font-black text-base">•</span> analytics{" "}
+    <span className="font-black text-base">•</span> campaign planning
+  </>
+),
+  },
+  {
+    name: "STUDIO PARTNER",
+    price: "$1,750/mo",
+    desc: (
+  <>
+    6-12 posts <span className="font-black text-base">•</span> 6-8 reels{" "}
+    <span className="font-black text-base">•</span> 3-5 story sets/wk{" "}
+    <span className="font-black text-base">•</span> weekly email blasts <span className="font-black text-base">•</span>content days
+    <span className="font-black text-base">•</span> reports
+  </>
+),
+  },
+];
 
 export default function Services() {
   return (
@@ -20,9 +71,11 @@ export default function Services() {
       <section className="bg-paper-dim">
         <div className="mx-auto grid max-w-6xl md:grid-cols-2">
           <div className="flex flex-col justify-center px-6 pb-4 pt-20 md:px-10 md:pb-0 md:pt-28">
-            <p className="font-script text-lg text-clay">{content.intro.eyebrow}</p>
-            <h1 className="mt-2 font-display text-4xl md:text-5xl">{content.intro.heading}</h1>
-            <p className="mt-4 max-w-xl text-ink">{content.intro.description}</p>
+            <p className="font-script text-lg text-clay">What I offer</p>
+            <h1 className="mt-2 font-display text-4xl md:text-5xl">Services & Pricing</h1>
+            <p className="mt-4 max-w-xl text-ink">
+              Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy.
+            </p>
           </div>
           <div className="flex h-64 items-center justify-center md:h-auto md:max-h-112.5">
             <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] rounded-lg object-cover" />
@@ -48,19 +101,26 @@ export default function Services() {
                     {String(i + 1).padStart(2, "0")} / {p.name}
                   </h3>
                   <p className="mt-2 font-display text-sm text-clay">{p.price}</p>
-                  <p className="mt-2 max-w-md text-sm text-ink/70">
-                    <BulletList items={p.items} />
-                  </p>
+                  <p className="mt-2 max-w-md text-sm text-ink/70">{p.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="mx-auto mt-10 w-fit rounded-full border border-ink bg-ink px-6 py-3 text-center">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-paper">{content.onboarding.badge}</p>
+            <p className="text-[11px] uppercase tracking-[0.2em] text-paper">
+              New Client Marketing Setup — $250 One-Time Onboarding Fee
+            </p>
           </div>
           <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-ink">
-            <BulletList items={content.onboarding.items} />
+            Account audit <span className="font-black text-base">•</span> Competitor research{" "}
+            <span className="font-black text-base">•</span> Brand review{" "}
+            <span className="font-black text-base">•</span> Target audience development{" "}
+            <span className="font-black text-base">•</span> Content strategy{" "}
+            <span className="font-black text-base">•</span> Account optimization{" "}
+            <span className="font-black text-base">•</span> Analytics setup{" "}
+            <span className="font-black text-base">•</span> Shared content folders{" "}
+            <span className="font-black text-base">•</span> First monthly marketing calendar
           </p>
         </div>
       </section>
@@ -89,9 +149,12 @@ export default function Services() {
 
       {/* Contact */}
       <section id="contact" className="mx-auto max-w-3xl px-6 py-24 md:px-10 md:py-32">
-        <p className="font-script text-lg text-clay">{content.contact.eyebrow}</p>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl">{content.contact.heading}</h2>
-        <p className="mt-4 text-ink">{content.contact.description}</p>
+        <p className="font-script text-lg text-clay">Get in touch</p>
+        <h2 className="mt-2 font-display text-3xl md:text-4xl">Book a Free Consultation</h2>
+        <p className="mt-4 text-ink">
+          Tell me a bit about your studio and what you're looking for — I'll follow up to set up
+          a time to talk.
+        </p>
         <div className="mt-10">
           <ContactForm />
         </div>

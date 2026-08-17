@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import ScoreboardTicker from "../components/ScoreboardTicker";
 import heroPhoto from "../assets/kelcey.jpg";
 import heroBgPhoto from "../assets/workout.JPG";
+import statementPhoto from "../assets/pgs.jpeg";
 import fueVideo from "../assets/fue.mp4";
 import vid1Video from "../assets/vid1.mp4";
-import content from "../../content/home.json";
+import vid2Video from "../assets/vid2.mp4";
 
 function ServicePanel({ video, label, bg, light, className = "", heightClass = "h-72 md:h-96" }) {
   return (
@@ -56,13 +57,13 @@ export default function Home() {
 
           <div className="relative z-10 w-full px-6 pb-14 pt-32 md:px-12 md:pb-20">
             <div className="mx-auto max-w-6xl">
-              <p className="font-script text-lg text-sand">{content.hero.eyebrow}</p>
+              <p className="font-script text-lg text-sand">Heart & Glass Social Marketing</p>
               <h1 className="mt-3 font-display leading-[0.9] tracking-tight text-paper">
-                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl">{content.hero.line1}</span>
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl">SOCIAL MEDIA</span>
                 <span className="block font-script text-4xl italic text-sand sm:text-5xl md:text-6xl">
-                  {content.hero.script}
+                  that feels like your<br></br>brand and grows
                 </span>
-                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl">{content.hero.line2}</span>
+                <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl">YOUR BUSINESS</span>
               </h1>
               <div className="mt-8">
                 <Link
@@ -91,19 +92,32 @@ export default function Home() {
                 className="relative aspect-[2/3] w-full rounded-lg object-cover shadow-xl"
               />
               <div className="relative -mt-6 ml-6 w-fit rounded-full bg-paper px-4 py-2 text-[11px] uppercase tracking-[0.15em] text-ink shadow-lg md:-mt-7 md:ml-8">
-                {content.about.statBadge}
+                2.7K+ followers grown
               </div>
             </div>
           </div>
 
           <div className="flex flex-col gap-5 text-paper md:col-span-7">
-            <p className="font-script text-lg text-sand">{content.about.eyebrow}</p>
+            <p className="font-script text-lg text-sand">About</p>
             <h2 className="font-display text-3xl md:text-4xl">
-              <span className="font-script italic text-sand">{content.about.heading}</span>
+              <span className="font-script italic text-sand">Meet the Founder</span>
             </h2>
-            {content.about.paragraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
+            <p>
+              Hi, I’m Kelcey — the founder and creative behind Heart & Glass Socials, a marketing agency rooted in thoughtful strategy, elevated content, and authentic storytelling.
+            </p>
+            <p>
+              With a background in marketing, hospitality, events, and social media, I’ve had the opportunity to work closely with brands   across the boutique fitness, wedding, hospitality, and lifestyle industries. My experience has taught me that beautiful content is only one part of a strong brand, the real magic happens when creativity is paired with intention, consistency, and a strategy that feels true to the business behind it.
+            </p>
+            <p>
+              I earned my degree in Business Administration with a concentration in Marketing, and throughout my career, I’ve developed hands-on experience in social media management, content creation, digital marketing, event promotion, brand development, and community engagement.
+            </p>
+            <p>
+              I created Heart & Glass Socials to bring a more personal approach to marketing. I love getting to know the heart behind a business, understanding what makes it different, and translating that into a digital presence people genuinely want to connect with.
+            </p>
+            <p>
+              My approach is feminine, intentional, detail-oriented, and always tailored to the individual brand. Whether I’m creating a content strategy, planning a campaign, capturing a Reel, or refreshing a social presence, my goal is simple: to make your brand feel as beautiful, memorable, and intentional online as it does in real life.
+              Based in the Bay Area, California, and available to work with brands near and far.
+            </p>
             <Link to="/experience" className="w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] hover:text-sand">
               See my experience →
             </Link>
@@ -111,12 +125,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Full-bleed statement */}
+      <section className="relative h-[70vh] w-full overflow-hidden bg-charcoal md:h-screen">
+        <img
+          src={statementPhoto}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/10" />
+        <div className="absolute bottom-10 left-6 z-10 md:bottom-16 md:left-16">
+          <p className="font-script text-lg text-sand">The glow is real</p>
+          <p className="mt-2 font-display leading-[0.85] tracking-tight text-paper text-5xl sm:text-6xl md:text-8xl lg:text-[8rem]">
+            Real studios.
+            <br />
+            Real results.
+          </p>
+        </div>
+      </section>
+
       {/* Services — mosaic of color-blocked panels */}
       <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="md:w-2/3">
-            <p className="font-script text-lg text-sand">{content.servicesTeaser.eyebrow}</p>
-            <h2 className="mt-2 font-display text-4xl tracking-tight text-paper md:text-6xl">{content.servicesTeaser.heading}</h2>
+            <p className="font-script text-lg text-sand">What I do</p>
+            <h2 className="mt-2 font-display text-4xl tracking-tight text-paper md:text-6xl">The Services</h2>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-12">
@@ -138,8 +170,18 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-12">
-            <div className="flex flex-col justify-center gap-4 rounded-lg bg-ink-soft p-8 text-paper md:col-span-12">
-              <p>{content.servicesTeaser.blurb}</p>
+            <ServicePanel
+              video={vid2Video}
+              label="Email Marketing"
+              bg="bg-paper-dim"
+              light
+              className="md:col-span-5"
+              heightClass="h-72 md:h-90"
+            />
+            <div className="flex flex-col justify-center gap-4 rounded-lg bg-ink-soft p-8 text-paper md:col-span-7">
+              <p>
+                Three focused offerings, one point of contact — social, events, and email working together instead of in silos.
+              </p>
               <Link
                 to="/services"
                 className="w-fit rounded-full border border-paper/40 px-6 py-2 text-[11px] uppercase tracking-[0.2em] transition-colors hover:border-sand hover:text-sand"
