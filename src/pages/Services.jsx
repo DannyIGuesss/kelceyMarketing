@@ -1,5 +1,6 @@
 import ContactForm from "../components/ContactForm";
-import wheatPhoto from "../assets/wheat.jpg";
+import headerPhoto from "../assets/7.jpg";
+import packagePhoto from "../assets/8.jpg";
 
 const SERVICES = [
   {
@@ -78,7 +79,7 @@ export default function Services() {
             </p>
           </div>
           <div className="flex h-64 items-center justify-center md:h-auto md:max-h-112.5">
-            <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] grayscale rounded-lg object-cover" />
+            <img src={headerPhoto} alt="" className="h-[75%] w-[60%] grayscale rounded-lg object-cover" />
           </div>
         </div>
       </section>
@@ -91,7 +92,7 @@ export default function Services() {
 
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
             <div className="h-80 overflow-hidden rounded-lg md:h-auto">
-              <img src={wheatPhoto} alt="" className="h-full w-full grayscale object-cover" />
+              <img src={packagePhoto} alt="" className="h-full w-full object-cover" />
             </div>
 
             <div className="flex flex-col justify-center divide-y-2 divide-paper/20">

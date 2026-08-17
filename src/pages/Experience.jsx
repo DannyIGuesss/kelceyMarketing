@@ -1,6 +1,6 @@
 import PhotoPlaceholder from "../components/PhotoPlaceholder";
-import pilatesPhoto from "../assets/instruct.jpeg";
-import fvePhoto from "../assets/fue.jpeg";
+import pilatesPhoto from "../assets/2.jpg";
+import fvePhoto from "../assets/4.jpg";
 import triplePhoto from "../assets/triple.JPEG";
 
 const WORK = [
@@ -83,7 +83,7 @@ export default function Experience() {
             <img
               src={WORK[1].photo}
               alt={WORK[1].photoLabel}
-              className="h-80 w-full grayscale rounded-lg object-cover md:h-96"
+              className="h-140 w-full grayscale rounded-lg object-cover md:h-160"
             />
           ) : (
             <PhotoPlaceholder label={WORK[1].photoLabel} className="h-80 md:h-96" />

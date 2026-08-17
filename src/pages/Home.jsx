@@ -5,6 +5,11 @@ import heroBgPhoto from "../assets/workout.JPG";
 import statementPhoto from "../assets/pgs.jpeg";
 import fueVideo from "../assets/fue.mp4";
 import vid1Video from "../assets/vid1.mp4";
+import approachPhoto1 from "../assets/1.jpg";
+import approachPhoto2 from "../assets/10.jpg";
+import approachPhoto3 from "../assets/9.jpg";
+import approachPhoto4 from "../assets/5.jpg";
+import logo from "../assets/logo.png";
 
 function ServicePanel({ video, label, bg, light, className = "", heightClass = "h-72 md:h-96" }) {
   return (
@@ -28,7 +33,7 @@ function ServicePanel({ video, label, bg, light, className = "", heightClass = "
           onTimeUpdate={(e) => {
             if (e.currentTarget.currentTime >= 15) e.currentTarget.currentTime = 0;
           }}
-          className={`w-full grayscale object-cover transition-transform duration-300 group-hover:scale-105 ${heightClass}`}
+          className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${heightClass}`}
         />
       </div>
       <div className={`mt-4 flex items-center justify-between ${light ? "text-ink" : "text-paper"}`}>
@@ -90,9 +95,6 @@ export default function Home() {
                 alt="Kelcey — portrait"
                 className="relative aspect-[2/3] w-full grayscale rounded-lg object-cover shadow-xl"
               />
-              <div className="relative -mt-6 ml-6 w-fit rounded-full bg-paper px-4 py-2 text-[11px] uppercase tracking-[0.15em] text-ink shadow-lg md:-mt-7 md:ml-8">
-                2.7K+ followers grown
-              </div>
             </div>
           </div>
 
@@ -110,6 +112,18 @@ export default function Home() {
             <p>
               I earned my degree in Business Administration with a concentration in Marketing, and throughout my career, I’ve developed hands-on experience in social media management, content creation, digital marketing, event promotion, brand development, and community engagement.
             </p>
+            <Link to="/experience" className="w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] hover:text-sand">
+              See my experience →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach — text left, 2x2 image grid right */}
+      <section className="bg-charcoal">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-12 pt-24 md:grid-cols-12 md:gap-8 md:px-10 md:pb-16 md:pt-32">
+          <div className="flex flex-col gap-5 text-paper md:col-span-5">
+            <img src={logo} alt="Heart & Glass Marketing Agency" className="h-90 w-auto" />
             <p>
               I created Heart & Glass Socials to bring a more personal approach to marketing. I love getting to know the heart behind a business, understanding what makes it different, and translating that into a digital presence people genuinely want to connect with.
             </p>
@@ -117,14 +131,17 @@ export default function Home() {
               My approach is feminine, intentional, detail-oriented, and always tailored to the individual brand. Whether I’m creating a content strategy, planning a campaign, capturing a Reel, or refreshing a social presence, my goal is simple: to make your brand feel as beautiful, memorable, and intentional online as it does in real life.
               Based in the Bay Area, California, and available to work with brands near and far.
             </p>
-            <Link to="/experience" className="w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] hover:text-sand">
-              See my experience →
-            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:col-span-7 md:mt-24">
+            <img src={approachPhoto1} alt="" className="aspect-square w-full grayscale rounded-lg object-cover" />
+            <img src={approachPhoto2} alt="" className="aspect-square w-full grayscale rounded-lg object-cover" />
+            <img src={approachPhoto3} alt="" className="aspect-square w-full grayscale rounded-lg object-cover" />
+            <img src={approachPhoto4} alt="" className="aspect-square w-full grayscale rounded-lg object-cover" />
           </div>
         </div>
       </section>
       {/* Services — mosaic of color-blocked panels */}
-      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
+      <section className="bg-charcoal px-6 pb-24 pt-12 md:px-10 md:pb-32 md:pt-16">
         <div className="mx-auto max-w-6xl">
           <div className="md:w-2/3">
             <p className="font-script text-lg text-sand">What I do</p>
