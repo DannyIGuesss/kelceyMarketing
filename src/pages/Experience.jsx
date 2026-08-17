@@ -114,7 +114,7 @@ export default function Experience() {
                 {REVIEWS.map((r, i) => (
                   <blockquote
                     key={i}
-                    className="flex min-h-56 flex-col items-center justify-between rounded-lg border border-ink bg-paper/80 p-6 text-center text-ink shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                    className="flex min-h-56 flex-col items-center justify-between rounded-lg border border-ink bg-paper/80 p-6 text-center text-ink shadow-lg shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20"
                   >
                     <p className="font-display text-lg leading-snug">"{r.quote}"</p>
                     <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-clay">

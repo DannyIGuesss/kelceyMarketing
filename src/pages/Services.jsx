@@ -130,7 +130,7 @@ export default function Services() {
           {SERVICES.map((s) => (
             <div
               key={s.name}
-              className="overflow-hidden rounded-lg border border-transparent shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-paper/40 hover:bg-ink-soft hover:shadow-2xl"
+              className="overflow-hidden rounded-lg border border-transparent shadow-lg shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-paper/40 hover:bg-ink-soft hover:shadow-2xl hover:shadow-white/20"
             >
               <div className="p-8 text-paper">
                 <h2 className="font-display text-xl">{s.name}</h2>
