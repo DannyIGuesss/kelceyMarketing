@@ -1,0 +1,42 @@
+{
+  "intro": {
+    "eyebrow": "Portfolio",
+    "heading": "Experience & Work",
+    "description": "A look at the studios I've worked with and what we built together."
+  },
+  "work": [
+    {
+      "name": "Pilates Glow Studio",
+      "tag": "Social Media + Event Marketing",
+      "blurb": "For over a year, I have worked alongside Pilates Glow Studio as a Marketing and Social Media Content Creator, helping strengthen the studio’s digital presence and build an engaged local community. During that time, I contributed to growing the studio’s Instagram following from approximately 300 followers to more than 2.7K.",
+      "blurb2": "My work has included developing content calendars, creating reels and posts, designing branded graphics, supporting promotional campaigns and membership offers, coordinating partnerships, and marketing special events. By creating consistent, visually cohesive content and implementing strategic marketing initiatives, I helped increase brand awareness, audience engagement, and community connections while supporting the studio’s continued membership and business growth."
+    },
+    {
+      "name": "FUE",
+      "tag": "Email + Social Media",
+      "blurb": "I worked with a small business client to establish and develop their Instagram presence from the ground up. My role included creating a comprehensive social media strategy, planning content, developing reel concepts, designing feed mockups, and building a structured posting schedule aligned with the brand’s visual identity.",
+      "blurb2": "By creating a cohesive content calendar and long-term social media roadmap, I helped give the client a clear direction for their online presence. The result was a polished and professional Instagram foundation designed to strengthen brand awareness, maintain visual consistency, and support future audience growth and engagement."
+    }
+  ],
+  "reviewsHeading": {
+    "eyebrow": "Kind words",
+    "heading": "From Past Clients"
+  },
+  "reviews": [
+    {
+      "quote": "Placeholder testimonial — real client quote goes here once collected.",
+      "name": "Studio Owner",
+      "studio": "Pilates Glow Studio"
+    },
+    {
+      "quote": "Placeholder testimonial — real client quote goes here once collected.",
+      "name": "Studio Owner",
+      "studio": "FUE"
+    },
+    {
+      "quote": "Placeholder testimonial — real client quote goes here once collected.",
+      "name": "Studio Owner",
+      "studio": "Client Name"
+    }
+  ]
+}

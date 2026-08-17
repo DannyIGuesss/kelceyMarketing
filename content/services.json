@@ -1,0 +1,69 @@
+{
+  "intro": {
+    "eyebrow": "What I offer",
+    "heading": "Services & Pricing",
+    "description": "Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy."
+  },
+  "packages": [
+    {
+      "name": "STARTER SOCIAL",
+      "price": "from $750/mo",
+      "items": ["feed posts", "basic calendar", "light engagement", "promos"]
+    },
+    {
+      "name": "GROWTH PARTNER",
+      "price": "from $1250/mo",
+      "items": ["posts", "stories", "analytics", "campaign planning"]
+    },
+    {
+      "name": "STUDIO PARTNER",
+      "price": "$1,750/mo",
+      "items": ["6-12 posts", "6-8 reels", "3-5 story sets/wk", "weekly email blasts", "content days", "reports"]
+    }
+  ],
+  "onboarding": {
+    "badge": "New Client Marketing Setup — $250 One-Time Onboarding Fee",
+    "items": [
+      "Account audit",
+      "Competitor research",
+      "Brand review",
+      "Target audience development",
+      "Content strategy",
+      "Account optimization",
+      "Analytics setup",
+      "Shared content folders",
+      "First monthly marketing calendar"
+    ]
+  },
+  "categories": [
+    {
+      "name": "SOCIAL MEDIA",
+      "items": ["Content calendar", "Posting", "Community management", "Monthly analytics"]
+    },
+    {
+      "name": "EVENT MARKETING",
+      "items": ["Grand openings", "Weddings", "Studio launches", "Influencer events"]
+    },
+    {
+      "name": "EMAIL/PROMOTIONS",
+      "items": ["Weekly email blasts", "Membership promos", "Studio updates", "Campaign support"]
+    },
+    {
+      "name": "STRATEGY",
+      "items": ["Monthly calendar", "Competitor research", "Trend research", "Local audience strategy"]
+    },
+    {
+      "name": "ANALYTICS",
+      "items": ["Reports every 2 weeks", "Reach/Engagement", "Reel views/Clicks", "Top content"]
+    },
+    {
+      "name": "COMMUNITY/EVENTS",
+      "items": ["Collaborations", "Event planning assistance", "Instructor features", "Member milestone"]
+    }
+  ],
+  "contact": {
+    "eyebrow": "Get in touch",
+    "heading": "Book a Free Consultation",
+    "description": "Tell me a bit about your studio and what you're looking for — I'll follow up to set up a time to talk."
+  }
+}

@@ -2,58 +2,24 @@ import PhotoPlaceholder from "../components/PhotoPlaceholder";
 import pilatesPhoto from "../assets/instruct.jpeg";
 import fvePhoto from "../assets/fue.jpeg";
 import triplePhoto from "../assets/triple.JPEG";
+import content from "../../content/experience.json";
 
-const WORK = [
-  {
-    name: "Pilates Glow Studio",
-    tag: "Social Media + Event Marketing",
-    blurb:
-      "For over a year, I have worked alongside Pilates Glow Studio as a Marketing and Social Media Content Creator, helping strengthen the studio’s digital presence and build an engaged local community. During that time, I contributed to growing the studio’s Instagram following from approximately 300 followers to more than 2.7K.",
-    blurb2:
-    "My work has included developing content calendars, creating reels and posts, designing branded graphics, supporting promotional campaigns and membership offers, coordinating partnerships, and marketing special events. By creating consistent, visually cohesive content and implementing strategic marketing initiatives, I helped increase brand awareness, audience engagement, and community connections while supporting the studio’s continued membership and business growth.",
-    photoLabel: "Pilates Glow Studio — work sample",
-    photo: pilatesPhoto,
-  },
-  {
-    name: "FUE",
-    tag: "Email + Social Media",
-    blurb:
-      "I worked with a small business client to establish and develop their Instagram presence from the ground up. My role included creating a comprehensive social media strategy, planning content, developing reel concepts, designing feed mockups, and building a structured posting schedule aligned with the brand’s visual identity.",
-    blurb2:
-    "By creating a cohesive content calendar and long-term social media roadmap, I helped give the client a clear direction for their online presence. The result was a polished and professional Instagram foundation designed to strengthen brand awareness, maintain visual consistency, and support future audience growth and engagement.",
-    photoLabel: "FVE — work sample",
-    photo: fvePhoto,
-  },
+const WORK_PHOTOS = [
+  { photoLabel: "Pilates Glow Studio — work sample", photo: pilatesPhoto },
+  { photoLabel: "FVE — work sample", photo: fvePhoto },
 ];
 
-const REVIEWS = [
-  {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
-    name: "Studio Owner",
-    studio: "Pilates Glow Studio",
-  },
-  {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
-    name: "Studio Owner",
-    studio: "FUE",
-  },
-  {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
-    name: "Studio Owner",
-    studio: "Client Name",
-  },
-];
+const WORK = content.work.map((w, i) => ({ ...w, ...WORK_PHOTOS[i] }));
+const REVIEWS = content.reviews;
 
 export default function Experience() {
   return (
     <>
       <section className="bg-paper-dim">
         <div className="mx-auto max-w-6xl px-6 pb-4 pt-20 md:px-10 md:pt-28">
-          <p className="font-script text-lg text-clay">Portfolio</p>
-          <h1 className="mt-2 font-display text-4xl md:text-5xl">Experience & Work</h1>
-          <p className="mt-4 max-w-xl text-ink">
-            A look at the studios I've worked with and what we built together.
-          </p>
+          <p className="font-script text-lg text-clay">{content.intro.eyebrow}</p>
+          <h1 className="mt-2 font-display text-4xl md:text-5xl">{content.intro.heading}</h1>
+          <p className="mt-4 max-w-xl text-ink">{content.intro.description}</p>
         </div>
 
         <div className="mx-auto max-w-6xl px-6 py-16 md:px-10">
@@ -101,8 +67,8 @@ export default function Experience() {
       <section className="flex min-h-175 flex-col justify-center overflow-hidden bg-paper-dim px-6 py-24 text-ink md:px-10 md:py-32">
         <div className="mx-auto w-full max-w-6xl">
           <div className="px-8 text-center">
-            <p className="font-script text-lg text-clay">Kind words</p>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl">From Past Clients</h2>
+            <p className="font-script text-lg text-clay">{content.reviewsHeading.eyebrow}</p>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl">{content.reviewsHeading.heading}</h2>
           </div>
 
           <div className="relative mt-12 grid w-full">

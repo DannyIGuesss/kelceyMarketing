@@ -1,0 +1,25 @@
+{
+  "hero": {
+    "eyebrow": "Heart & Glass Social Marketing",
+    "line1": "SOCIAL MEDIA",
+    "script": "that feels like your brand and grows",
+    "line2": "YOUR BUSINESS"
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "Meet the Founder",
+    "statBadge": "2.7K+ followers grown",
+    "paragraphs": [
+      "Hi, I’m Kelcey — the founder and creative behind Heart & Glass Socials, a marketing agency rooted in thoughtful strategy, elevated content, and authentic storytelling.",
+      "With a background in marketing, hospitality, events, and social media, I’ve had the opportunity to work closely with brands across the boutique fitness, wedding, hospitality, and lifestyle industries. My experience has taught me that beautiful content is only one part of a strong brand, the real magic happens when creativity is paired with intention, consistency, and a strategy that feels true to the business behind it.",
+      "I earned my degree in Business Administration with a concentration in Marketing, and throughout my career, I’ve developed hands-on experience in social media management, content creation, digital marketing, event promotion, brand development, and community engagement.",
+      "I created Heart & Glass Socials to bring a more personal approach to marketing. I love getting to know the heart behind a business, understanding what makes it different, and translating that into a digital presence people genuinely want to connect with.",
+      "My approach is feminine, intentional, detail-oriented, and always tailored to the individual brand. Whether I’m creating a content strategy, planning a campaign, capturing a Reel, or refreshing a social presence, my goal is simple: to make your brand feel as beautiful, memorable, and intentional online as it does in real life. Based in the Bay Area, California, and available to work with brands near and far."
+    ]
+  },
+  "servicesTeaser": {
+    "eyebrow": "What I do",
+    "heading": "The Services",
+    "blurb": "Two focused offerings, one point of contact — social and events working together instead of in silos."
+  }
+}
