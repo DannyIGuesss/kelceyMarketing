@@ -23,7 +23,7 @@ function renderMessage(status, payload) {
   (function () {
     function receiveMessage(message) {
       window.opener.postMessage(
-        "authorization:github:${status}:${JSON.stringify(payload).replace(/</g, "\\u003c")}",
+        'authorization:github:${status}:${JSON.stringify(payload).replace(/</g, "\\u003c")}',
         message.origin
       );
       window.removeEventListener("message", receiveMessage, false);
