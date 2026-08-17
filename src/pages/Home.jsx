@@ -5,7 +5,6 @@ import heroBgPhoto from "../assets/workout.JPG";
 import statementPhoto from "../assets/pgs.jpeg";
 import fueVideo from "../assets/fue.mp4";
 import vid1Video from "../assets/vid1.mp4";
-import vid2Video from "../assets/vid2.mp4";
 
 function ServicePanel({ video, label, bg, light, className = "", heightClass = "h-72 md:h-96" }) {
   return (
@@ -29,7 +28,7 @@ function ServicePanel({ video, label, bg, light, className = "", heightClass = "
           onTimeUpdate={(e) => {
             if (e.currentTarget.currentTime >= 15) e.currentTarget.currentTime = 0;
           }}
-          className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${heightClass}`}
+          className={`w-full grayscale object-cover transition-transform duration-300 group-hover:scale-105 ${heightClass}`}
         />
       </div>
       <div className={`mt-4 flex items-center justify-between ${light ? "text-ink" : "text-paper"}`}>
@@ -51,7 +50,7 @@ export default function Home() {
           <img
             src={heroBgPhoto}
             alt="Kelcey instructing at Pilates Glow Studio"
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            className="absolute inset-0 h-full w-full grayscale object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
 
@@ -89,7 +88,7 @@ export default function Home() {
               <img
                 src={heroPhoto}
                 alt="Kelcey — portrait"
-                className="relative aspect-[2/3] w-full rounded-lg object-cover shadow-xl"
+                className="relative aspect-[2/3] w-full grayscale rounded-lg object-cover shadow-xl"
               />
               <div className="relative -mt-6 ml-6 w-fit rounded-full bg-paper px-4 py-2 text-[11px] uppercase tracking-[0.15em] text-ink shadow-lg md:-mt-7 md:ml-8">
                 2.7K+ followers grown
@@ -124,25 +123,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Full-bleed statement */}
-      <section className="relative h-[70vh] w-full overflow-hidden bg-charcoal md:h-screen">
-        <img
-          src={statementPhoto}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-charcoal/10" />
-        <div className="absolute bottom-10 left-6 z-10 md:bottom-16 md:left-16">
-          <p className="font-script text-lg text-sand">The glow is real</p>
-          <p className="mt-2 font-display leading-[0.85] tracking-tight text-paper text-5xl sm:text-6xl md:text-8xl lg:text-[8rem]">
-            Real studios.
-            <br />
-            Real results.
-          </p>
-        </div>
-      </section>
-
       {/* Services — mosaic of color-blocked panels */}
       <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-6xl">
@@ -170,17 +150,9 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-12">
-            <ServicePanel
-              video={vid2Video}
-              label="Email Marketing"
-              bg="bg-paper-dim"
-              light
-              className="md:col-span-5"
-              heightClass="h-72 md:h-90"
-            />
-            <div className="flex flex-col justify-center gap-4 rounded-lg bg-ink-soft p-8 text-paper md:col-span-7">
+            <div className="flex flex-col justify-center gap-4 rounded-lg bg-ink-soft p-8 text-paper md:col-span-12">
               <p>
-                Three focused offerings, one point of contact — social, events, and email working together instead of in silos.
+                Two focused offerings, one point of contact — social and events working together instead of in silos.
               </p>
               <Link
                 to="/services"

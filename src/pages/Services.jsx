@@ -68,51 +68,51 @@ const PACKAGES = [
 export default function Services() {
   return (
     <>
-      <section className="bg-paper-dim">
+      <section className="bg-charcoal">
         <div className="mx-auto grid max-w-6xl md:grid-cols-2">
           <div className="flex flex-col justify-center px-6 pb-4 pt-20 md:px-10 md:pb-0 md:pt-28">
-            <p className="font-script text-lg text-clay">What I offer</p>
-            <h1 className="mt-2 font-display text-4xl md:text-5xl">Services & Pricing</h1>
-            <p className="mt-4 max-w-xl text-ink">
+            <p className="font-script text-lg text-sand">What I offer</p>
+            <h1 className="mt-2 font-display text-4xl text-paper md:text-5xl">Services & Pricing</h1>
+            <p className="mt-4 max-w-xl text-paper">
               Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy.
             </p>
           </div>
           <div className="flex h-64 items-center justify-center md:h-auto md:max-h-112.5">
-            <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] rounded-lg object-cover" />
+            <img src={wheatPhoto} alt="" className="h-[75%] w-[60%] grayscale rounded-lg object-cover" />
           </div>
         </div>
       </section>
 
       {/* Pricing */}
-      <section className="bg-paper-dim px-6 py-24 md:px-10 md:py-32">
+      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-6xl">
-          <p className="font-script text-lg text-clay">Packages</p>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl">Find your fit</h2>
+          <p className="font-script text-lg text-sand">Packages</p>
+          <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Find your fit</h2>
 
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
             <div className="h-80 overflow-hidden rounded-lg md:h-auto">
-              <img src={wheatPhoto} alt="" className="h-full w-full object-cover" />
+              <img src={wheatPhoto} alt="" className="h-full w-full grayscale object-cover" />
             </div>
 
-            <div className="flex flex-col justify-center divide-y-2 divide-ink">
+            <div className="flex flex-col justify-center divide-y-2 divide-paper/20">
               {PACKAGES.map((p, i) => (
                 <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
-                  <h3 className="font-accent text-3xl tracking-wide text-ink transition-colors group-hover:text-clay md:text-4xl">
+                  <h3 className="font-accent text-3xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-4xl">
                     {String(i + 1).padStart(2, "0")} / {p.name}
                   </h3>
-                  <p className="mt-2 font-display text-sm text-clay">{p.price}</p>
-                  <p className="mt-2 max-w-md text-sm text-ink/70">{p.desc}</p>
+                  <p className="mt-2 font-display text-sm text-sand">{p.price}</p>
+                  <p className="mt-2 max-w-md text-sm text-paper/70">{p.desc}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="mx-auto mt-10 w-fit rounded-full border border-ink bg-ink px-6 py-3 text-center">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-paper">
+          <div className="mx-auto mt-10 w-fit rounded-full bg-sand px-6 py-3 text-center">
+            <p className="text-[11px] uppercase tracking-[0.2em] text-ink">
               New Client Marketing Setup — $250 One-Time Onboarding Fee
             </p>
           </div>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-ink">
+          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-paper">
             Account audit <span className="font-black text-base">•</span> Competitor research{" "}
             <span className="font-black text-base">•</span> Brand review{" "}
             <span className="font-black text-base">•</span> Target audience development{" "}
@@ -125,19 +125,19 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-16 md:px-10">
-        <div className="grid gap-10 md:grid-cols-3">
+      <section className="bg-charcoal px-6 py-16 md:px-10">
+        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
           {SERVICES.map((s) => (
             <div
               key={s.name}
-              className="overflow-hidden rounded-lg border border-transparent shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-ink hover:bg-line hover:shadow-2xl"
+              className="overflow-hidden rounded-lg border border-transparent shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-paper/40 hover:bg-ink-soft hover:shadow-2xl"
             >
-              <div className="p-8 text-ink">
+              <div className="p-8 text-paper">
                 <h2 className="font-display text-xl">{s.name}</h2>
                 <ul className="mt-4 space-y-2 text-sm">
                   {s.items.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-ink" /> {item}
+                      <span className="h-1 w-1 rounded-full bg-sand" /> {item}
                     </li>
                   ))}
                 </ul>
@@ -148,15 +148,17 @@ export default function Services() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="mx-auto max-w-3xl px-6 py-24 md:px-10 md:py-32">
-        <p className="font-script text-lg text-clay">Get in touch</p>
-        <h2 className="mt-2 font-display text-3xl md:text-4xl">Book a Free Consultation</h2>
-        <p className="mt-4 text-ink">
-          Tell me a bit about your studio and what you're looking for — I'll follow up to set up
-          a time to talk.
-        </p>
-        <div className="mt-10">
-          <ContactForm />
+      <section id="contact" className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-3xl">
+          <p className="font-script text-lg text-sand">Get in touch</p>
+          <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Book a Free Consultation</h2>
+          <p className="mt-4 text-paper">
+            Tell me a bit about your studio and what you're looking for — I'll follow up to set up
+            a time to talk.
+          </p>
+          <div className="mt-10">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>
