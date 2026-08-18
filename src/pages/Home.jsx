@@ -113,13 +113,12 @@ export default function Home() {
 
       {/* Our Purpose — swimming swans as full-bleed section background */}
       <section
-        className="relative flex min-h-[680px] flex-col justify-between overflow-hidden bg-cover bg-center py-16 sm:block sm:py-0 lg:min-h-[820px]"
+        className="relative flex min-h-[680px] items-center justify-center overflow-hidden bg-cover bg-center px-6 py-16 sm:px-8 lg:min-h-[820px]"
         style={{ backgroundImage: `url(${swimmingPhoto})` }}
       >
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Heading — centered above the body text */}
-        <div className="relative z-10 px-6 text-center sm:absolute sm:left-1/2 sm:top-[15%] sm:-translate-x-1/2 sm:px-0">
+        <div className="relative z-10 mx-auto w-full text-center sm:w-[70%]">
           <div className="relative inline-block">
             <p
               className="font-script leading-none text-paper"
@@ -134,14 +133,8 @@ export default function Home() {
               Purpose
             </h2>
           </div>
-        </div>
 
-        {/* Body */}
-        <div className="relative z-10 px-6 py-10 sm:absolute sm:left-1/2 sm:top-[53%] sm:w-full sm:-translate-x-1/2 sm:-translate-y-1/2 sm:px-8 sm:py-0">
-          <div
-            className="mx-auto flex max-w-[1050px] flex-col gap-2 text-center font-medium text-paper"
-            style={{ fontSize: "clamp(1rem, 1.3vw, 1.35rem)", lineHeight: "1.35" }}
-          >
+          <div className="mx-auto mt-8 flex max-w-[650px] flex-col gap-5 text-left text-base leading-[1.7] text-paper">
             <p>
               I created Heart & Glass Socials to bring a more personal approach to marketing. I love getting to know the heart behind a business, understanding what makes it different, and translating that into a digital presence people genuinely want to connect with.
             </p>
