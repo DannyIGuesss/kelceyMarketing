@@ -196,7 +196,7 @@ export default function Experience() {
                 style={{ fontSize: "1.15rem", lineHeight: "1.35" }}
               >
                 <h2
-                  className="absolute inset-x-0 bottom-full mb-4 text-center font-accent uppercase leading-none text-paper"
+                  className="relative mb-6 text-center font-accent uppercase leading-none text-paper lg:absolute lg:inset-x-0 lg:bottom-full lg:mb-4 lg:mt-0"
                   style={{ fontSize: "clamp(3.5rem, 6vw, 5rem)" }}
                 >
                   {WORK[1].name}
