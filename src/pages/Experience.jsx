@@ -98,7 +98,7 @@ export default function Experience() {
   return (
     <>
       {/* Intro — own section, heart.jpg background fades to charcoal by its own bottom edge */}
-      <section className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-charcoal">
+      <section className="relative flex h-[85vh] flex-col items-center justify-center overflow-hidden bg-charcoal">
         <img src={heartPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/60 to-charcoal" />
 
@@ -126,7 +126,7 @@ export default function Experience() {
             {WORK[0].name}
           </h2>
 
-          <div className="mt-8 flex flex-col items-center gap-10 lg:mt-0 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
+          <div className="mt-8 flex flex-col items-center gap-10 lg:mt-0 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
             {/* Left image — sits high */}
             <div className="w-full shrink-0 sm:max-w-[320px] lg:w-[305px]">
               {WORK[0].photo ? (
@@ -158,7 +158,7 @@ export default function Experience() {
             </div>
 
             {/* Right image — offset lower */}
-            <div className="w-full shrink-0 sm:max-w-[300px] lg:mt-[190px] lg:w-[290px]">
+            <div className="w-full shrink-0 sm:max-w-[300px] lg:w-[290px]">
               <img
                 src={pilatesPhoto}
                 alt=""
