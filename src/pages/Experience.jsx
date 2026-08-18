@@ -98,14 +98,14 @@ export default function Experience() {
   return (
     <>
       {/* Intro — own section, heart.jpg background fades to charcoal by its own bottom edge */}
-      <section className="relative flex h-[40vh] flex-col items-center justify-center overflow-hidden bg-charcoal">
+      <section className="relative flex h-[85vh] flex-col items-center justify-center overflow-hidden bg-charcoal">
         <img src={heartPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/60 to-charcoal" />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 text-center md:px-10">
           <h1
             className="font-light uppercase leading-none tracking-wide text-paper"
-            style={{ fontFamily: "var(--font-body)", fontSize: "clamp(3rem, 6.5vw, 5.5rem)" }}
+            style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
           >
             Experience & Work
           </h1>
