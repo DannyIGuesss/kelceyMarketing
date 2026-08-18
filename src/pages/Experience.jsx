@@ -97,18 +97,27 @@ const REVIEWS = [
 export default function Experience() {
   return (
     <>
-      <section className="relative overflow-hidden bg-charcoal">
+      {/* Intro — own section, heart.jpg background fades to charcoal by its own bottom edge */}
+      <section className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-charcoal">
         <img src={heartPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/60 to-charcoal" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pb-4 pt-32 text-center md:px-10 md:pt-40">
-          <h1 className="font-display text-4xl text-paper md:text-5xl">Experience & Work</h1>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 text-center md:px-10">
+          <h1
+            className="font-light uppercase leading-none tracking-wide text-paper"
+            style={{ fontFamily: "var(--font-body)", fontSize: "clamp(3rem, 6.5vw, 5.5rem)" }}
+          >
+            Experience & Work
+          </h1>
           <p className="mx-auto mt-4 max-w-xl text-paper">
             A look at the studios I've worked with and what we built together.
           </p>
         </div>
+      </section>
 
-        <div className="relative z-10 mx-auto max-w-[1400px] px-5 pb-20 pt-8 lg:pb-32 lg:pt-12">
+      {/* Pilates Glow Studio — plain background, no image */}
+      <section className="bg-charcoal">
+        <div className="mx-auto max-w-[1400px] px-5 pb-20 pt-8 lg:pb-32 lg:pt-12">
           {/* Mobile-only heading — appears above the images per the mobile stacking order */}
           <h2
             className="text-center font-script font-light leading-none text-paper lg:hidden"
