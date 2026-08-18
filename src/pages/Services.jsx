@@ -92,7 +92,7 @@ export default function Services() {
 
           <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
             <div className="h-80 overflow-hidden rounded-lg md:h-auto">
-              <img src={packagePhoto} alt="" className="h-full w-full object-cover" />
+              <img src={packagePhoto} alt="" className="h-full w-full rounded-lg object-cover" />
             </div>
 
             <div className="flex flex-col justify-center divide-y-2 divide-paper/20">

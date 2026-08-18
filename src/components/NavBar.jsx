@@ -10,19 +10,19 @@ const links = [
 export default function NavBar() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const isHome = pathname === "/";
+  const isTransparent = pathname === "/" || pathname === "/experience";
 
   return (
     <header
       className={`z-50 text-paper ${
-        isHome
+        isTransparent
           ? "absolute inset-x-0 top-0 bg-transparent"
           : "sticky top-0 bg-charcoal border-b border-white/10"
       }`}
     >
       <nav className="relative flex items-center justify-between px-6 py-5 min-[1400px]:px-12">
         <Link to="/" className="shrink-0 font-script text-[23px] tracking-wide">
-          Heart & Glass <span className="not-italic font-display text-[17px] tracking-[0.3em] uppercase align-middle hidden min-[1400px]:inline">Marketing Agency</span>
+          Heart & Glass
         </Link>
 
         <ul className="hidden gap-8 min-[1400px]:absolute min-[1400px]:left-1/2 min-[1400px]:flex min-[1400px]:-translate-x-1/2">
