@@ -10,7 +10,7 @@ const links = [
 export default function NavBar() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const isTransparent = pathname === "/" || pathname === "/experience";
+  const isTransparent = pathname === "/" || pathname === "/experience" || pathname === "/services";
 
   return (
     <header
@@ -21,7 +21,11 @@ export default function NavBar() {
       }`}
     >
       <nav className="relative flex items-center justify-between px-6 py-5 min-[1400px]:px-12">
-        <Link to="/" className="shrink-0 font-script text-[23px] tracking-wide">
+        <Link
+          to="/"
+          className="hidden shrink-0 font-semibold uppercase tracking-[0.18em] text-paper md:inline-block"
+          style={{ fontFamily: "var(--font-body)", fontSize: "16px" }}
+        >
           Heart & Glass
         </Link>
 
@@ -52,7 +56,7 @@ export default function NavBar() {
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((o) => !o)}
-          className="flex flex-col gap-1.5 min-[1400px]:hidden"
+          className="ml-auto flex flex-col gap-1.5 min-[1400px]:hidden"
         >
           <span className="h-px w-6 bg-paper" />
           <span className="h-px w-6 bg-paper" />

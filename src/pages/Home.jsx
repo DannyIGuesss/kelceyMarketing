@@ -31,7 +31,7 @@ export default function Home() {
 
           {/* Small top text */}
           <p
-            className="absolute left-1/2 top-[10%] z-10 -translate-x-1/2 whitespace-nowrap px-4 text-center font-semibold uppercase tracking-[0.18em] text-paper"
+            className="absolute left-1/2 top-[13%] z-10 -translate-x-1/2 whitespace-nowrap px-4 text-center font-semibold uppercase tracking-[0.18em] text-paper"
             style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.7rem, 1.1vw, 0.85rem)" }}
           >
             Heart & Glass
@@ -47,7 +47,7 @@ export default function Home() {
             </h1>
             <p
               className="font-script leading-none text-paper"
-              style={{ fontSize: "clamp(4rem, 8vw, 7rem)", marginTop: "clamp(-1rem, -1vw, 0rem)" }}
+              style={{ fontSize: "clamp(4rem, 8vw, 7rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
             >
               Socials
             </p>
@@ -80,13 +80,13 @@ export default function Home() {
             <div className="relative">
               <p
                 className="font-script leading-none text-paper"
-                style={{ fontSize: "clamp(4rem, 7vw, 6.5rem)", marginBottom: "clamp(0.5rem, 1.5vw, 1.5rem)" }}
+                style={{ fontSize: "clamp(4rem, 7vw, 6.5rem)" }}
               >
                 About
               </p>
               <h2
                 className="relative ml-6 font-accent uppercase leading-[0.95] tracking-wide text-paper sm:ml-10"
-                style={{ fontSize: "clamp(2.5rem, 4.5vw, 4rem)", marginTop: "clamp(-2rem, -3vw, -1rem)" }}
+                style={{ fontSize: "clamp(2.5rem, 4.5vw, 4rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
               >
                 The Founder
               </h2>
@@ -118,9 +118,9 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Heading */}
-        <div className="relative z-10 px-6 sm:absolute sm:left-[5%] sm:top-[12%] sm:px-0">
-          <div className="relative w-fit">
+        {/* Heading — centered above the body text */}
+        <div className="relative z-10 px-6 text-center sm:absolute sm:left-1/2 sm:top-[15%] sm:-translate-x-1/2 sm:px-0">
+          <div className="relative inline-block">
             <p
               className="font-script leading-none text-paper"
               style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
@@ -128,8 +128,8 @@ export default function Home() {
               Our
             </p>
             <h2
-              className="relative ml-4 font-accent uppercase leading-[0.95] tracking-wide text-paper sm:ml-10"
-              style={{ fontSize: "clamp(2rem, 4vw, 4rem)", marginTop: "clamp(-1.5rem, -2.5vw, -0.75rem)" }}
+              className="relative font-accent uppercase leading-[0.95] tracking-wide text-paper"
+              style={{ fontSize: "clamp(2rem, 4vw, 4rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
             >
               Purpose
             </h2>
@@ -174,13 +174,22 @@ export default function Home() {
                   className="aspect-[3/4] w-full rounded-[3rem] object-cover shadow-black/0 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-black/50"
                 />
                 <p
-                  className="mt-3 font-script font-light leading-none text-paper"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)" }}
+                  className="mt-6 font-script font-light leading-none text-paper"
+                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)", wordSpacing: "clamp(0.5rem, 1vw, 1.5rem)" }}
                 >
                   {s.label}
                 </p>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/services"
+              className="inline-block w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] text-paper hover:text-sand"
+            >
+              See services & pricing →
+            </Link>
           </div>
         </div>
       </section>

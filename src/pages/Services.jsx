@@ -1,6 +1,6 @@
 import ContactForm from "../components/ContactForm";
-import headerPhoto from "../assets/7.jpg";
-import packagePhoto from "../assets/8.jpg";
+import soloPhoto from "../assets/solo.jpg";
+import oceanPhoto from "../assets/ocean.jpg";
 
 const SERVICES = [
   {
@@ -69,95 +69,118 @@ const PACKAGES = [
 export default function Services() {
   return (
     <>
-      <section className="bg-charcoal">
-        <div className="mx-auto grid max-w-6xl md:grid-cols-2">
-          <div className="flex flex-col justify-center px-6 pb-4 pt-20 md:px-10 md:pb-0 md:pt-28">
-            <p className="font-script text-lg text-sand">What I offer</p>
-            <h1 className="mt-2 font-display text-4xl text-paper md:text-5xl">Services & Pricing</h1>
-            <p className="mt-4 max-w-xl text-paper">
-              Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy.
-            </p>
-          </div>
-          <div className="flex h-64 items-center justify-center md:h-auto md:max-h-112.5">
-            <img src={headerPhoto} alt="" className="h-[75%] w-[60%] grayscale rounded-lg object-cover" />
-          </div>
-        </div>
-      </section>
+      <section className="relative flex h-[80vh] flex-col items-center justify-center overflow-hidden bg-charcoal">
+        <img src={soloPhoto} alt="" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/60 to-charcoal" />
 
-      {/* Pricing */}
-      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-6xl">
-          <p className="font-script text-lg text-sand">Packages</p>
-          <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Find your fit</h2>
-
-          <div className="mt-12 grid gap-10 md:grid-cols-2 md:items-stretch md:gap-16">
-            <div className="h-80 overflow-hidden rounded-lg md:h-auto">
-              <img src={packagePhoto} alt="" className="h-full w-full rounded-lg object-cover" />
-            </div>
-
-            <div className="flex flex-col justify-center divide-y-2 divide-paper/20">
-              {PACKAGES.map((p, i) => (
-                <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
-                  <h3 className="font-accent text-3xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-4xl">
-                    {String(i + 1).padStart(2, "0")} / {p.name}
-                  </h3>
-                  <p className="mt-2 font-display text-sm text-sand">{p.price}</p>
-                  <p className="mt-2 max-w-md text-sm text-paper/70">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mx-auto mt-10 w-fit rounded-full bg-sand px-6 py-3 text-center">
-            <p className="text-[11px] uppercase tracking-[0.2em] text-ink">
-              New Client Marketing Setup — $250 One-Time Onboarding Fee
-            </p>
-          </div>
-          <p className="mx-auto mt-6 max-w-3xl text-center text-sm text-paper">
-            Account audit <span className="font-black text-base">•</span> Competitor research{" "}
-            <span className="font-black text-base">•</span> Brand review{" "}
-            <span className="font-black text-base">•</span> Target audience development{" "}
-            <span className="font-black text-base">•</span> Content strategy{" "}
-            <span className="font-black text-base">•</span> Account optimization{" "}
-            <span className="font-black text-base">•</span> Analytics setup{" "}
-            <span className="font-black text-base">•</span> Shared content folders{" "}
-            <span className="font-black text-base">•</span> First monthly marketing calendar
+        <div className="relative z-10 mx-auto max-w-6xl px-6 text-center md:px-10" style={{ transform: "translateY(6px)" }}>
+          <h1
+            className="mt-2 font-light uppercase leading-none tracking-wide text-paper"
+            style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
+          >
+            Services & Pricing
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-paper">
+            Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy.
           </p>
         </div>
       </section>
 
-      <section className="bg-charcoal px-6 py-16 md:px-10">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
-          {SERVICES.map((s) => (
-            <div
-              key={s.name}
-              className="overflow-hidden rounded-lg border border-transparent shadow-lg shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-paper/40 hover:bg-ink-soft hover:shadow-2xl hover:shadow-white/20"
-            >
-              <div className="p-8 text-paper">
-                <h2 className="font-display text-xl">{s.name}</h2>
-                <ul className="mt-4 space-y-2 text-sm">
+      {/* Pricing — editorial layout over full-bleed ocean background */}
+      <section className="relative overflow-hidden bg-charcoal">
+        <img src={oceanPhoto} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-transparent to-charcoal" />
+
+        <div className="relative z-10 px-6 py-20 md:px-10 md:py-28 lg:flex lg:min-h-[900px] lg:items-center lg:py-32">
+          <div className="w-full lg:w-2/3">
+            <div className="mx-auto max-w-xl">
+              <h2 className="font-display text-4xl text-paper md:text-5xl">Find your fit</h2>
+              <p className="mt-2 font-script text-lg text-sand">Packages</p>
+
+              <div className="mt-12 flex flex-col divide-y-2 divide-paper/20">
+                {PACKAGES.map((p, i) => (
+                  <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
+                    <h3 className="font-accent text-3xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-4xl">
+                      {String(i + 1).padStart(2, "0")} / {p.name}
+                    </h3>
+                    <p className="mt-2 font-display text-sm text-sand">{p.price}</p>
+                    <p className="mt-2 max-w-md text-sm text-paper/80">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-12 w-fit rounded-full bg-sand px-6 py-3 text-center">
+                <p className="text-[11px] uppercase tracking-[0.2em] text-ink">
+                  New Client Marketing Setup — $250 One-Time Onboarding Fee
+                </p>
+              </div>
+              <p className="mt-6 max-w-md text-sm text-paper/90">
+                Account audit <span className="font-black text-base">•</span> Competitor research{" "}
+                <span className="font-black text-base">•</span> Brand review{" "}
+                <span className="font-black text-base">•</span> Target audience development{" "}
+                <span className="font-black text-base">•</span> Content strategy{" "}
+                <span className="font-black text-base">•</span> Account optimization{" "}
+                <span className="font-black text-base">•</span> Analytics setup{" "}
+                <span className="font-black text-base">•</span> Shared content folders{" "}
+                <span className="font-black text-base">•</span> First monthly marketing calendar
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-[280px_1fr] lg:gap-16">
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <p className="font-script text-lg text-sand">What's included</p>
+            <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">
+              Every Service,<br />One Partner
+            </h2>
+            <p className="mt-4 max-w-xs text-sm text-paper/80">
+              A full suite of marketing support built specifically for boutique fitness studios.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-0 lg:grid-cols-3">
+            {SERVICES.map((s, i) => (
+              <div
+                key={s.name}
+                className="rounded-lg border border-paper/20 bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-black/0 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-paper/50 hover:shadow-2xl hover:shadow-black/50"
+              >
+                <p className="font-display text-sm text-paper/60">{String(i + 1).padStart(2, "0")}</p>
+                <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">{s.name}</h2>
+                <div className="mt-4 h-px w-10 bg-paper/30" />
+                <ul className="mt-4 space-y-2 text-sm text-paper/80">
                   {s.items.map((item) => (
                     <li key={item} className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-sand" /> {item}
+                      <span className="h-1 w-1 rounded-full bg-paper/60" /> {item}
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Contact */}
       <section id="contact" className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-3xl">
-          <p className="font-script text-lg text-sand">Get in touch</p>
-          <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Book a Free Consultation</h2>
-          <p className="mt-4 text-paper">
-            Tell me a bit about your studio and what you're looking for — I'll follow up to set up
-            a time to talk.
-          </p>
-          <div className="mt-10">
+        <div className="mx-auto max-w-6xl rounded-lg border border-paper/15 bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-black/0 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-paper/50 hover:shadow-2xl hover:shadow-black/50 md:p-14 lg:grid lg:grid-cols-2 lg:gap-16 lg:p-16">
+          <div className="lg:flex lg:flex-col lg:justify-center">
+            <p className="font-script text-lg text-sand">Get in touch</p>
+            <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Book a Free Consultation</h2>
+            <p className="mt-4 max-w-sm text-paper/80">
+              Tell me a bit about your studio and what you're looking for — I'll follow up to set up
+              a time to talk.
+            </p>
+            <div className="mt-8 h-px w-16 bg-paper/30" />
+            <p className="mt-6 text-[11px] uppercase tracking-[0.2em] text-paper/60">
+              Response within 1–2 business days
+            </p>
+          </div>
+
+          <div className="mt-12 lg:mt-0">
             <ContactForm />
           </div>
         </div>
