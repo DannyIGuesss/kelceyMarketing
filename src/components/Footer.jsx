@@ -17,7 +17,7 @@ export default function Footer() {
 
         <div className="flex items-end gap-6 text-[11px] uppercase tracking-[0.2em] text-paper/70">
           <a
-            href="https://www.instagram.com/pilatesglow.studio/"
+            href="https://www.instagram.com/heartglasssocials?utm_source=qr"
             target="_blank"
             rel="noreferrer"
             className="flex flex-col items-center gap-1 hover:text-sand"
