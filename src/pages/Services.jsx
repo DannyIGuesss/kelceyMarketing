@@ -146,7 +146,7 @@ export default function Services() {
             {SERVICES.map((s, i) => (
               <div
                 key={s.name}
-                className="rounded-lg border border-paper/20 bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-black/0 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-paper/50 hover:shadow-2xl hover:shadow-black/50"
+                className="rounded-lg bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-[0_0_25px_rgba(255,255,255,0.12)] transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_45px_rgba(255,255,255,0.3)]"
               >
                 <p className="font-display text-sm text-paper/60">{String(i + 1).padStart(2, "0")}</p>
                 <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">
@@ -180,7 +180,7 @@ export default function Services() {
 
       {/* Contact */}
       <section id="contact" className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-6xl rounded-lg border border-paper/15 bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-black/0 transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-paper/50 hover:shadow-2xl hover:shadow-black/50 md:p-14 lg:grid lg:grid-cols-2 lg:gap-16 lg:p-16">
+        <div className="mx-auto max-w-6xl rounded-lg bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-[0_0_25px_rgba(255,255,255,0.12)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,255,255,0.3)] md:p-14 lg:grid lg:grid-cols-2 lg:gap-16 lg:p-16">
           <div className="lg:flex lg:flex-col lg:justify-center">
             <p className="font-script text-lg text-sand">Get in touch</p>
             <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Book a Free Consultation</h2>
