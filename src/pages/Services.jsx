@@ -1,6 +1,6 @@
 import ContactForm from "../components/ContactForm";
-import soloPhoto from "../assets/solo.jpg";
-import oceanPhoto from "../assets/ocean.jpg";
+import soloPhoto from "../assets/services/solo.jpg";
+import oceanPhoto from "../assets/services/ocean.jpg";
 
 const SERVICES = [
   {
@@ -149,7 +149,21 @@ export default function Services() {
                 className="rounded-lg border border-paper/20 bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-black/0 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-paper/50 hover:shadow-2xl hover:shadow-black/50"
               >
                 <p className="font-display text-sm text-paper/60">{String(i + 1).padStart(2, "0")}</p>
-                <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">{s.name}</h2>
+                <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">
+                  <span className="min-[1200px]:hidden">
+                    {s.name.split("/").map((part, i, arr) => (
+                      <span key={i}>
+                        {part}
+                        {i < arr.length - 1 && (
+                          <>
+                            /<wbr />
+                          </>
+                        )}
+                      </span>
+                    ))}
+                  </span>
+                  <span className="hidden min-[1200px]:inline">{s.name}</span>
+                </h2>
                 <div className="mt-4 h-px w-10 bg-paper/30" />
                 <ul className="mt-4 space-y-2 text-sm text-paper/80">
                   {s.items.map((item) => (

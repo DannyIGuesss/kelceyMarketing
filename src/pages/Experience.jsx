@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 import PhotoPlaceholder from "../components/PhotoPlaceholder";
-import pilatesPhoto from "../assets/2.jpg";
-import pilatesPhotoLeft from "../assets/6.jpg";
-import fvePhoto from "../assets/4.jpg";
-import fueVideo from "../assets/fue.mp4";
-import triplePhoto from "../assets/triple.JPEG";
-import heartPhoto from "../assets/heart.jpg";
-import iphoneFrame from "../assets/iphone.png";
+import pilatesPhoto from "../assets/experience/2.jpg";
+import pilatesPhotoLeft from "../assets/shared/6.jpg";
+import fvePhoto from "../assets/shared/4.jpg";
+import fueVideo from "../assets/experience/fue.mp4";
+import triplePhoto from "../assets/experience/triple.JPEG";
+import heartPhoto from "../assets/experience/heart.jpg";
+import iphoneFrame from "../assets/experience/iphone.png";
 
 function FueVideo({ src, className = "pointer-events-none w-full object-contain", style }) {
   const videoRef = useRef(null);

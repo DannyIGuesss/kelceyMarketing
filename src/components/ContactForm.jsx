@@ -94,7 +94,7 @@ export default function ContactForm() {
       <div aria-live="polite">
         {status === "error" && (
           <p className="text-sm text-red-400">
-            Something went wrong sending that — try again, or email kelceydelatorre2121@icloud.com directly.
+            Something went wrong sending that — try again, or email heartglasssocials@gmail.com directly.
           </p>
         )}
       </div>

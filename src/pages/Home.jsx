@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import ScoreboardTicker from "../components/ScoreboardTicker";
-import heroPhoto from "../assets/Kelcey2.jpg";
-import heroBgPhoto from "../assets/main.jpg";
-import statementPhoto from "../assets/pgs.jpeg";
-import swimmingPhoto from "../assets/swimming.jpg";
-import servicePhoto1 from "../assets/4.jpg";
-import servicePhoto2 from "../assets/1.jpg";
-import servicePhoto3 from "../assets/6.jpg";
+import heroPhoto from "../assets/home/Kelcey2.jpg";
+import heroBgPhoto from "../assets/home/main.jpg";
+import swimmingPhoto from "../assets/home/swimming.jpg";
+import servicePhoto1 from "../assets/shared/4.jpg";
+import servicePhoto2 from "../assets/home/1.jpg";
+import servicePhoto3 from "../assets/shared/6.jpg";
 
 const SERVICES = [
   { photo: servicePhoto1, label: "Social Media" },
@@ -21,7 +19,7 @@ export default function Home() {
           ticker in a fixed h-screen flex column so the hero shrinks to fill exactly
           (100vh - ticker height) — the first screenful always ends at the ticker. */}
       <div className="flex h-screen flex-col">
-        <section className="relative flex flex-1 items-end overflow-hidden bg-charcoal">
+        <section className="relative flex flex-1 flex-col items-center justify-between overflow-hidden bg-charcoal px-6 py-16 text-center">
           <img
             src={heroBgPhoto}
             alt=""
@@ -31,16 +29,16 @@ export default function Home() {
 
           {/* Small top text */}
           <p
-            className="absolute left-1/2 top-[13%] z-10 -translate-x-1/2 whitespace-nowrap px-4 text-center font-semibold uppercase tracking-[0.18em] text-paper"
+            className="relative z-10 mx-auto w-full font-semibold uppercase tracking-[0.18em] text-paper lg:w-auto lg:whitespace-nowrap"
             style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.7rem, 1.1vw, 0.85rem)" }}
           >
             Heart & Glass
           </p>
 
           {/* Main title + overlapping script "Socials" */}
-          <div className="absolute left-1/2 top-[55%] z-10 -translate-x-1/2 px-4 text-center">
+          <div className="relative z-10 mx-auto w-full lg:w-auto">
             <h1
-              className="whitespace-nowrap font-light uppercase leading-none tracking-wide text-paper"
+              className="font-light uppercase leading-none tracking-wide text-paper lg:whitespace-nowrap"
               style={{ fontFamily: "var(--font-body)", fontSize: "clamp(3rem, 6.5vw, 5.5rem)" }}
             >
               Heart & Glass
@@ -55,29 +53,27 @@ export default function Home() {
 
           {/* Bottom tagline */}
           <p
-            className="absolute left-1/2 top-[89%] z-10 -translate-x-1/2 px-4 text-center uppercase tracking-[0.08em] text-paper sm:whitespace-nowrap"
+            className="relative z-10 mx-auto w-full uppercase tracking-[0.08em] text-paper lg:w-auto lg:whitespace-nowrap"
             style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.75rem, 1.5vw, 1.25rem)" }}
           >
             New Marketing Agency — Here To Help Your Business
           </p>
         </section>
-
-        <ScoreboardTicker />
       </div>
 
       {/* About — photo inset in a sand color-block against charcoal */}
       <section className="bg-charcoal">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-20 px-6 py-24 md:px-10 md:py-32 lg:flex-row lg:items-center lg:gap-32">
-          <div className="w-full lg:w-[38%]">
+          <div className="mx-auto w-full max-w-[430px] overflow-hidden rounded-lg lg:mx-0">
             <img
               src={heroPhoto}
               alt="Kelcey, founder of Heart & Glass Socials"
-              className="h-[380px] w-full rounded-lg object-cover sm:h-[460px] lg:h-[580px]"
+              className="h-[580px] min-h-[580px] w-full object-cover"
             />
           </div>
 
           <div className="w-full text-paper lg:w-[50%]">
-            <div className="relative">
+            <div className="relative mx-auto w-fit text-center lg:mx-0 lg:w-auto lg:text-left">
               <p
                 className="font-script leading-none text-paper"
                 style={{ fontSize: "clamp(4rem, 7vw, 6.5rem)" }}
@@ -85,14 +81,14 @@ export default function Home() {
                 About
               </p>
               <h2
-                className="relative ml-6 font-accent uppercase leading-[0.95] tracking-wide text-paper sm:ml-10"
+                className="relative font-accent uppercase leading-[0.95] tracking-wide text-paper lg:ml-10"
                 style={{ fontSize: "clamp(2.5rem, 4.5vw, 4rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
               >
                 The Founder
               </h2>
             </div>
 
-            <div className="mt-8 flex max-w-xl flex-col gap-5 text-base leading-[1.7] text-paper">
+            <div className="mx-auto mt-8 flex max-w-xl flex-col gap-5 text-center text-base leading-[1.7] text-paper lg:mx-0 lg:text-left">
               <p>
                 Hi, I’m Kelcey — the founder and creative behind Heart & Glass Socials, a marketing agency rooted in thoughtful strategy, elevated content, and authentic storytelling.
               </p>
@@ -104,9 +100,11 @@ export default function Home() {
               </p>
             </div>
 
-            <Link to="/experience" className="mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] hover:text-sand">
-              See my experience →
-            </Link>
+            <div className="text-center lg:text-left">
+              <Link to="/experience" className="mt-6 inline-block w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] hover:text-sand">
+                See my experience →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -117,6 +115,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${swimmingPhoto})` }}
       >
         <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-transparent to-charcoal" />
 
         <div className="relative z-10 mx-auto w-full text-center sm:w-[70%]">
           <div className="relative inline-block">

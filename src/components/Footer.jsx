@@ -1,5 +1,5 @@
-import instagramIcon from "../assets/insta.png";
-import linkedinIcon from "../assets/linkedin.png";
+import instagramIcon from "../assets/shared/insta.png";
+import linkedinIcon from "../assets/shared/linkedin.png";
 
 export default function Footer() {
   return (
@@ -8,10 +8,10 @@ export default function Footer() {
         <div>
           <p className="font-script text-2xl">Let's talk</p>
           <a
-            href="mailto:kelceydelatorre2121@icloud.com"
+            href="mailto:heartglasssocials@gmail.com"
             className="mt-2 block font-display text-2xl hover:text-sand md:text-3xl"
           >
-            kelceydelatorre2121@icloud.com
+            heartglasssocials@gmail.com
           </a>
         </div>
 
