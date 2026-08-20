@@ -45,7 +45,7 @@ export default function Home() {
             </h1>
             <p
               className="font-script leading-none text-paper"
-              style={{ fontSize: "clamp(4rem, 8vw, 7rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
+              style={{ fontSize: "clamp(7rem, 14vw, 11.5rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
             >
               Socials
             </p>

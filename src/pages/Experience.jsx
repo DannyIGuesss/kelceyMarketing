@@ -78,7 +78,8 @@ const WORK = [
 
 const REVIEWS = [
   {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
+    quote:
+      "Working with Kelcey has been such a valuable part of growing Pilates Glow Studio. She truly understands our vision and has helped make our social media feel more cohesive, elevated, and aligned with our brand. From Reels and social posts to promotional materials and creative ideas, her work has helped us reach more people, gain more views and followers, and build a stronger online presence. Her creativity, attention to detail, and ability to bring ideas to life are incredible. I would highly recommend her to any business looking to build a strong and recognizable brand.",
     name: "Studio Owner",
     studio: "Pilates Glow Studio",
   },
@@ -205,7 +206,7 @@ export default function Experience() {
                 style={{ fontSize: "1.15rem", lineHeight: "1.35" }}
               >
                 <h2
-                  className="relative mb-6 text-center font-accent uppercase leading-none text-paper lg:absolute lg:inset-x-0 lg:bottom-full lg:mb-4 lg:mt-0"
+                  className="relative mb-6 text-center font-script uppercase leading-none text-paper lg:absolute lg:inset-x-0 lg:bottom-full lg:mb-4 lg:mt-0"
                   style={{ fontSize: "clamp(3.5rem, 6vw, 5rem)" }}
                 >
                   {WORK[1].name}
@@ -224,32 +225,40 @@ export default function Experience() {
       </section>
 
       {/* Reviews */}
-      <section className="flex min-h-175 flex-col justify-center overflow-hidden bg-charcoal px-6 py-24 text-paper md:px-10 md:py-32">
-        <div className="mx-auto w-full max-w-6xl">
+      <section className="relative flex min-h-175 flex-col justify-center overflow-hidden bg-charcoal px-6 py-24 text-paper md:px-10 md:py-32">
+        <div className="relative mx-auto w-full max-w-6xl">
           <div className="px-8 text-center">
             <p className="font-script text-lg text-sand">Kind words</p>
             <h2 className="mt-2 font-display text-3xl md:text-4xl">From Past Clients</h2>
           </div>
+        </div>
 
-          <div className="relative mt-12 grid w-full">
-            <div className="col-start-1 row-start-1 hidden opacity-99 md:flex">
-              <img src={triplePhoto} alt="" className="h-full w-full grayscale rounded-lg object-cover" />
-            </div>
-            <div className="relative col-start-1 row-start-1 flex h-full flex-col justify-center px-4">
-              <div className="grid gap-10 md:grid-cols-3">
-                {REVIEWS.map((r, i) => (
-                  <blockquote
-                    key={i}
-                    className="flex min-h-56 flex-col items-center justify-between rounded-lg border border-ink bg-paper/80 p-6 text-center text-ink shadow-lg shadow-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/20"
-                  >
-                    <p className="font-display text-lg leading-snug">"{r.quote}"</p>
-                    <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-ink/60">
-                      {r.name} — {r.studio}
-                    </footer>
-                  </blockquote>
-                ))}
+        <div className="relative mx-auto mt-12 w-full max-w-6xl px-4">
+          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
+            {REVIEWS.map((r, i) => (
+              <div
+                key={r.studio}
+                className="relative flex min-h-56 items-center justify-center overflow-hidden rounded-lg p-4 md:min-h-[400px] md:p-8"
+              >
+                <img
+                  src={triplePhoto}
+                  alt=""
+                  className="absolute inset-0 hidden h-full w-full object-cover opacity-99 md:block"
+                  style={{ objectPosition: i === 0 ? "left center" : i === 1 ? "center" : "right center" }}
+                />
+                <div className="absolute inset-0 hidden bg-charcoal/55 md:block" />
+                <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
+                  <p className="text-base leading-[1.7] text-paper">
+                    <span className="text-paper">"</span>
+                    {r.quote}
+                    <span className="text-paper">"</span>
+                  </p>
+                  <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
+                    {r.name} — {r.studio}
+                  </footer>
+                </blockquote>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Italiana&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..700&family=Montserrat:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Sloop Script Pro";
+  src: url("./assets/fonts/sloop-script-pro.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-ink: #1c1b19;
   --color-ink-soft: #333333;
@@ -12,11 +20,8 @@
   --color-clay: #f0f0f0;
   --color-line: #e5e5e5;
 
-  /* Headers and section-direction labels (eyebrows) use Bodoni Moda's
-     italic — elegant, high-contrast, calligraphic feel. Regular body
-     copy uses Montserrat. */
-  --font-display: "Bodoni Moda", serif;
-  --font-script: "Bodoni Moda", serif;
+  --font-display: "Sloop Script Pro", cursive;
+  --font-script: "Sloop Script Pro", cursive;
   --font-body: "Montserrat", sans-serif;
   --font-accent: "Italiana", serif;
 }
@@ -33,12 +38,12 @@ body {
 
 .font-display {
   font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 500;
 }
 .font-script {
   font-family: var(--font-script);
-  font-style: italic;
+  font-style: normal;
 }
 .font-accent {
   font-family: var(--font-accent);

@@ -133,10 +133,16 @@ export default function Services() {
       <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-[280px_1fr] lg:gap-16">
           <div className="lg:sticky lg:top-32 lg:self-start">
-            <p className="font-script text-lg text-sand">What's included</p>
-            <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">
+            <p className="text-lg text-sand" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic" }}>
+              What's included
+            </p>
+            <h2
+              className="mt-2 text-3xl text-paper md:text-4xl"
+              style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}
+            >
               Every Service,<br />One Partner
             </h2>
+            <div className="mt-4 h-px w-10 bg-white/30" />
             <p className="mt-4 max-w-xs text-sm text-paper/80">
               A full suite of marketing support built specifically for boutique fitness studios.
             </p>
@@ -146,7 +152,7 @@ export default function Services() {
             {SERVICES.map((s, i) => (
               <div
                 key={s.name}
-                className="rounded-lg bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-[0_0_25px_rgba(255,255,255,0.12)] transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-[0_0_45px_rgba(255,255,255,0.3)]"
+                className="rounded-2xl border border-white/15 bg-charcoal/40 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_25px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-white/30 hover:shadow-[0_12px_50px_rgba(0,0,0,0.4),0_0_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]"
               >
                 <p className="font-display text-sm text-paper/60">{String(i + 1).padStart(2, "0")}</p>
                 <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">
@@ -180,10 +186,17 @@ export default function Services() {
 
       {/* Contact */}
       <section id="contact" className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-6xl rounded-lg bg-gradient-to-b from-white/15 to-charcoal p-8 shadow-[0_0_25px_rgba(255,255,255,0.12)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,255,255,0.3)] md:p-14 lg:grid lg:grid-cols-2 lg:gap-16 lg:p-16">
+        <div className="mx-auto max-w-6xl rounded-2xl border border-white/15 bg-charcoal/40 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_25px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] hover:border-white/30 hover:shadow-[0_12px_50px_rgba(0,0,0,0.4),0_0_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)] md:p-14 lg:grid lg:grid-cols-2 lg:gap-16 lg:p-16">
           <div className="lg:flex lg:flex-col lg:justify-center">
-            <p className="font-script text-lg text-sand">Get in touch</p>
-            <h2 className="mt-2 font-display text-3xl text-paper md:text-4xl">Book a Free Consultation</h2>
+            <p className="text-lg text-sand" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic" }}>
+              Get in touch
+            </p>
+            <h2
+              className="mt-2 text-3xl text-paper md:text-4xl"
+              style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}
+            >
+              Book a Free Consultation
+            </h2>
             <p className="mt-4 max-w-sm text-paper/80">
               Tell me a bit about your studio and what you're looking for — I'll follow up to set up
               a time to talk.

@@ -46,7 +46,9 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="text-center">
-        <p className="font-display text-2xl text-paper">Thank you — message sent.</p>
+        <p className="text-2xl text-paper" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}>
+          Thank you — message sent.
+        </p>
         <p className="mt-2 text-sm text-paper/70">Kelcey will follow up within 1–2 business days.</p>
       </div>
     );
@@ -102,7 +104,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mt-2 w-fit rounded-md border border-paper px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-paper transition-colors hover:bg-paper hover:text-ink disabled:opacity-60"
+        className="mt-2 w-fit rounded-lg border border-white/25 bg-white/10 px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-paper shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/15 hover:shadow-[0_0_35px_rgba(255,255,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : "Submit Inquiry"}
       </button>
@@ -121,7 +123,7 @@ function Field({ label, name, value, onChange, type = "text", required }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-md border border-paper/25 bg-transparent px-3 py-2 font-body text-paper outline-none placeholder:text-paper/40 focus:border-paper"
+        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 font-body text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)]"
       />
     </div>
   );
@@ -140,7 +142,7 @@ function Textarea({ label, name, value, onChange, required, rows = 4 }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-md border border-paper/25 bg-transparent px-3 py-2 font-body text-paper outline-none placeholder:text-paper/40 focus:border-paper"
+        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 font-body text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)]"
       />
     </div>
   );

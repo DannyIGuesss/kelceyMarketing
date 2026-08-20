@@ -4,12 +4,15 @@ import linkedinIcon from "../assets/shared/linkedin.png";
 export default function Footer() {
   return (
     <footer className="bg-charcoal px-6 py-14 text-paper md:px-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
+      <div className="flex w-full flex-col gap-10 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="font-script text-2xl">Let's talk</p>
+          <p className="text-2xl" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic" }}>
+            Let's talk
+          </p>
           <a
             href="mailto:heartglasssocials@gmail.com"
-            className="mt-2 block font-display text-2xl hover:text-sand md:text-3xl"
+            className="mt-2 block text-2xl hover:text-sand md:text-3xl"
+            style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}
           >
             heartglasssocials@gmail.com
           </a>
@@ -37,7 +40,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.15em] text-paper/40">
+      <div className="mt-10 w-full border-t border-white/10 pt-6 text-[11px] uppercase tracking-[0.15em] text-paper/40">
         © {new Date().getFullYear()} Heart & Glass Socials — Social, Event & Email Marketing for Studios
       </div>
     </footer>
