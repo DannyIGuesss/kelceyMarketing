@@ -95,8 +95,12 @@ export default function Services() {
         <div className="relative z-10 px-6 py-20 md:px-10 md:py-28 lg:flex lg:min-h-[900px] lg:items-center lg:py-32">
           <div className="w-full lg:w-2/3">
             <div className="mx-auto max-w-xl">
-              <h2 className="font-display text-4xl text-paper md:text-5xl">Find your fit</h2>
-              <p className="mt-2 font-script text-lg text-sand">Packages</p>
+              <h2 className="text-4xl text-paper md:text-5xl" style={{ fontFamily: "var(--font-body)" }}>
+                Find your fit
+              </h2>
+              <p className="mt-2 text-lg text-sand" style={{ fontFamily: "var(--font-body)" }}>
+                Packages
+              </p>
 
               <div className="mt-12 flex flex-col divide-y-2 divide-paper/20">
                 {PACKAGES.map((p, i) => (

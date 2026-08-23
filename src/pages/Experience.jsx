@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import PhotoPlaceholder from "../components/PhotoPlaceholder";
 import pilatesPhoto from "../assets/experience/2.jpg";
 import pilatesPhotoLeft from "../assets/shared/6.jpg";
@@ -218,8 +219,12 @@ export default function Experience() {
       <section className="relative flex min-h-175 flex-col justify-center overflow-hidden bg-charcoal px-6 py-24 text-paper md:px-10 md:py-32">
         <div className="relative mx-auto w-full max-w-6xl">
           <div className="px-8 text-center">
-            <p className="fontFamily: var(--font-body) text-lg text-sand">Kind words</p>
-            <h2 className="mt-2 fontFamily: var(--font-body) text-3xl md:text-4xl">From Past Clients</h2>
+            <p className="text-lg text-sand" style={{ fontFamily: "var(--font-body)" }}>
+              Kind words
+            </p>
+            <h2 className="mt-2 text-3xl md:text-4xl" style={{ fontFamily: "var(--font-body)" }}>
+              From Past Clients
+            </h2>
           </div>
         </div>
 
@@ -228,7 +233,7 @@ export default function Experience() {
             {[0, 1, 2].map((i) => (
               <div
                 key={i}
-                className={`relative min-h-56 items-center justify-center overflow-hidden rounded-lg p-4 md:flex md:min-h-[400px] md:p-8 ${
+                className={`relative min-h-56 flex-col items-center justify-center overflow-hidden rounded-lg p-4 md:flex md:min-h-[400px] md:p-8 ${
                   i === 1 ? "flex" : "hidden"
                 }`}
               >
@@ -250,6 +255,16 @@ export default function Experience() {
                       {REVIEWS[0].name} — {REVIEWS[0].studio}
                     </footer>
                   </blockquote>
+                )}
+                {i === 1 && (
+                  <div className="mt-6 text-center lg:hidden">
+                    <Link
+                      to="/services#contact"
+                      className="inline-block rounded-full border border-paper/40 px-5 py-2 text-[14px] uppercase tracking-[0.2em] text-paper transition-colors hover:border-sand hover:text-sand"
+                    >
+                      Book a Consult
+                    </Link>
+                  </div>
                 )}
               </div>
             ))}

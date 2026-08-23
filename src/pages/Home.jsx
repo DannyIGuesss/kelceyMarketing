@@ -183,6 +183,15 @@ export default function Home() {
               See services & pricing →
             </Link>
           </div>
+
+          <div className="mt-12 text-center lg:hidden">
+            <Link
+              to="/services#contact"
+              className="inline-block rounded-full border border-paper/40 px-5 py-2 text-[14px] uppercase tracking-[0.2em] text-paper transition-colors hover:border-sand hover:text-sand"
+            >
+              Book a Consult
+            </Link>
+          </div>
         </div>
       </section>
     </>
