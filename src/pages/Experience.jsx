@@ -83,16 +83,6 @@ const REVIEWS = [
     name: "Studio Owner",
     studio: "Pilates Glow Studio",
   },
-  {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
-    name: "Studio Owner",
-    studio: "FUE",
-  },
-  {
-    quote: "Placeholder testimonial — real client quote goes here once collected.",
-    name: "Studio Owner",
-    studio: "Client Name",
-  },
 ];
 
 export default function Experience() {
@@ -228,17 +218,19 @@ export default function Experience() {
       <section className="relative flex min-h-175 flex-col justify-center overflow-hidden bg-charcoal px-6 py-24 text-paper md:px-10 md:py-32">
         <div className="relative mx-auto w-full max-w-6xl">
           <div className="px-8 text-center">
-            <p className="font-script text-lg text-sand">Kind words</p>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl">From Past Clients</h2>
+            <p className="fontFamily: var(--font-body) text-lg text-sand">Kind words</p>
+            <h2 className="mt-2 fontFamily: var(--font-body) text-3xl md:text-4xl">From Past Clients</h2>
           </div>
         </div>
 
         <div className="relative mx-auto mt-12 w-full max-w-6xl px-4">
           <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-            {REVIEWS.map((r, i) => (
+            {[0, 1, 2].map((i) => (
               <div
-                key={r.studio}
-                className="relative flex min-h-56 items-center justify-center overflow-hidden rounded-lg p-4 md:min-h-[400px] md:p-8"
+                key={i}
+                className={`relative min-h-56 items-center justify-center overflow-hidden rounded-lg p-4 md:flex md:min-h-[400px] md:p-8 ${
+                  i === 1 ? "flex" : "hidden"
+                }`}
               >
                 <img
                   src={triplePhoto}
@@ -247,16 +239,18 @@ export default function Experience() {
                   style={{ objectPosition: i === 0 ? "left center" : i === 1 ? "center" : "right center" }}
                 />
                 <div className="absolute inset-0 hidden bg-charcoal/55 md:block" />
-                <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
-                  <p className="text-base leading-[1.7] text-paper">
-                    <span className="text-paper">"</span>
-                    {r.quote}
-                    <span className="text-paper">"</span>
-                  </p>
-                  <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
-                    {r.name} — {r.studio}
-                  </footer>
-                </blockquote>
+                {i === 1 && (
+                  <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
+                    <p className="text-base leading-[1.7] text-paper">
+                      <span className="text-paper">"</span>
+                      {REVIEWS[0].quote}
+                      <span className="text-paper">"</span>
+                    </p>
+                    <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
+                      {REVIEWS[0].name} — {REVIEWS[0].studio}
+                    </footer>
+                  </blockquote>
+                )}
               </div>
             ))}
           </div>
