@@ -66,7 +66,7 @@ const WORK = [
     photo: pilatesPhoto,
   },
   {
-    name: "FUE",
+    name: "Fue",
     tag: "Email + Social Media",
     blurb:
       "I worked with a small business client to establish and develop their Instagram presence from the ground up. My role included creating a comprehensive social media strategy, planning content, developing reel concepts, designing feed mockups, and building a structured posting schedule aligned with the brand’s visual identity.",
@@ -197,7 +197,7 @@ export default function Experience() {
                 style={{ fontSize: "1.15rem", lineHeight: "1.35" }}
               >
                 <h2
-                  className="relative mb-6 text-center font-script uppercase leading-none text-paper lg:absolute lg:inset-x-0 lg:bottom-full lg:mb-4 lg:mt-0"
+                  className="relative mb-6 text-center font-script leading-none tracking-[0.15em] text-paper lg:absolute lg:inset-x-0 lg:bottom-full lg:mb-4 lg:mt-0"
                   style={{ fontSize: "clamp(3.5rem, 6vw, 5rem)" }}
                 >
                   {WORK[1].name}
