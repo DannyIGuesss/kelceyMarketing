@@ -84,6 +84,12 @@ const REVIEWS = [
     name: "Studio Owner",
     studio: "Pilates Glow Studio",
   },
+  {
+    quote:
+      "I worked with Kelcey for my new business launch and she was so great to have on the team! Communicated quickly, brought fresh ideas to the table, and was a pleasure on shoot day. Totally recommend if you want someone who cares about what they do and help bring your thoughts to life!",
+    name: "Owner",
+    studio: "Fue",
+  },
 ];
 
 export default function Experience() {
@@ -229,45 +235,51 @@ export default function Experience() {
         </div>
 
         <div className="relative mx-auto mt-12 w-full max-w-6xl px-4">
-          <div className="grid gap-6 md:grid-cols-3 md:gap-8">
-            {[0, 1, 2].map((i) => (
-              <div
-                key={i}
-                className={`relative min-h-56 flex-col items-center justify-center overflow-hidden rounded-lg p-4 md:flex md:min-h-[400px] md:p-8 ${
-                  i === 1 ? "flex" : "hidden"
-                }`}
-              >
-                <img
-                  src={triplePhoto}
-                  alt=""
-                  className="absolute inset-0 hidden h-full w-full object-cover opacity-99 md:block"
-                  style={{ objectPosition: i === 0 ? "left center" : i === 1 ? "center" : "right center" }}
-                />
-                <div className="absolute inset-0 hidden bg-charcoal/55 md:block" />
-                {i === 1 && (
-                  <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
-                    <p className="text-base leading-[1.7] text-paper">
-                      <span className="text-paper">"</span>
-                      {REVIEWS[0].quote}
-                      <span className="text-paper">"</span>
-                    </p>
-                    <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
-                      {REVIEWS[0].name} — {REVIEWS[0].studio}
-                    </footer>
-                  </blockquote>
-                )}
-                {i === 1 && (
-                  <div className="mt-6 text-center lg:hidden">
-                    <Link
-                      to="/services#contact"
-                      className="inline-block rounded-full border border-paper/40 px-5 py-2 text-[14px] uppercase tracking-[0.2em] text-paper transition-colors hover:border-sand hover:text-sand"
-                    >
-                      Book a Consult
-                    </Link>
-                  </div>
-                )}
-              </div>
-            ))}
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+            {[0, 2].map((i) => {
+              const review = i === 0 ? REVIEWS[0] : REVIEWS[1];
+              return (
+                <div
+                  key={i}
+                  className="relative flex min-h-56 flex-col items-center justify-center overflow-hidden rounded-lg p-4 md:min-h-[400px] md:p-8"
+                >
+                  <div
+                    className="absolute inset-0 hidden opacity-99 md:block"
+                    style={{
+                      backgroundImage: `url(${triplePhoto})`,
+                      // The two seams in the source photo sit at ~32.9% and ~66.6%
+                      // of its width (not exact thirds), so each crop's background-size
+                      // is tuned per side to land exactly on the real photo boundary
+                      // instead of bleeding into the middle photo.
+                      backgroundSize: i === 0 ? "304% 100%" : "299.6% 100%",
+                      backgroundPosition: i === 0 ? "0% center" : "100% center",
+                    }}
+                  />
+                  <div className="absolute inset-0 hidden bg-charcoal/55 md:block" />
+                  {review && (
+                    <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
+                      <p className="text-base leading-[1.7] text-paper">
+                        <span className="text-paper">"</span>
+                        {review.quote}
+                        <span className="text-paper">"</span>
+                      </p>
+                      <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
+                        {review.name} — {review.studio}
+                      </footer>
+                    </blockquote>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-6 text-center lg:hidden">
+            <Link
+              to="/services#contact"
+              className="inline-block rounded-full border border-paper/40 px-5 py-2 text-[14px] uppercase tracking-[0.2em] text-paper transition-colors hover:border-sand hover:text-sand"
+            >
+              Book a Consult
+            </Link>
           </div>
         </div>
       </section>

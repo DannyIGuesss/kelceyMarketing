@@ -33,36 +33,49 @@ const PACKAGES = [
   {
     name: "STARTER SOCIAL",
     price: "from $750/mo",
-    desc: (
-  <>
-    feed posts <span className="font-black text-base">•</span> basic calendar{" "}
-    <span className="font-black text-base">•</span> light engagement{" "}
-    <span className="font-black text-base">•</span> promos
-  </>
-),
+    tagline: "Consistent content for a polished social presence.",
+    features: [
+      "6–8 feed posts",
+      "2–4 Reels",
+      "monthly content calendar",
+      "captions + social SEO",
+      "promotional graphics",
+      "light engagement",
+      "monthly insights",
+    ],
+    bestFor: "Small businesses ready to stay consistent online.",
   },
   {
     name: "GROWTH PARTNER",
-    price: "from $1250/mo",
-    desc: (
-  <>
-    posts <span className="font-black text-base">•</span> stories{" "}
-    <span className="font-black text-base">•</span> analytics{" "}
-    <span className="font-black text-base">•</span> campaign planning
-  </>
-),
+    price: "from $1,250/mo",
+    popular: true,
+    tagline: "Strategic social management designed to grow your brand.",
+    features: [
+      "8–12 feed posts",
+      "4–6 Reels",
+      "story content",
+      "content strategy",
+      "community engagement",
+      "campaign planning",
+      "analytics + monthly insights",
+    ],
+    bestFor: "Growing brands ready for a more hands-on social strategy.",
   },
   {
     name: "STUDIO PARTNER",
     price: "$1,750/mo",
-    desc: (
-  <>
-    6-12 posts <span className="font-black text-base">•</span> 6-8 reels{" "}
-    <span className="font-black text-base">•</span> 3-5 story sets/wk{" "}
-    <span className="font-black text-base">•</span> weekly email blasts <span className="font-black text-base">•</span>content days
-    <span className="font-black text-base">•</span> reports
-  </>
-),
+    tagline: "Your dedicated social + marketing partner.",
+    features: [
+      "6–12 feed posts",
+      "6–8 Reels",
+      "3–5 story sets/week",
+      "content days",
+      "weekly email marketing",
+      "campaigns + promotions",
+      "community management",
+      "monthly reporting",
+    ],
+    bestFor: "Studios and lifestyle brands wanting full-service marketing support.",
   },
 ];
 
@@ -105,11 +118,38 @@ export default function Services() {
               <div className="mt-12 flex flex-col divide-y-2 divide-paper/20">
                 {PACKAGES.map((p, i) => (
                   <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
+                    {p.popular && (
+                      <p className="mb-2 inline-block rounded-full border border-sand px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-sand">
+                        Most Popular
+                      </p>
+                    )}
                     <h3 className="font-accent text-3xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-4xl">
                       {String(i + 1).padStart(2, "0")} / {p.name}
                     </h3>
-                    <p className="mt-2 font-display text-sm text-sand">{p.price}</p>
-                    <p className="mt-2 max-w-md text-sm text-paper/80">{p.desc}</p>
+                    <p className="mt-2 font-accent text-xl text-sand">{p.price}</p>
+                    <p className="mt-2 max-w-md text-sm text-paper/80">{p.tagline}</p>
+                    <p className="mt-2 max-w-md text-sm text-paper/80">
+                      {p.features.map((f, idx) => (
+                        <span key={f}>
+                          {f}
+                          {idx < p.features.length - 1 && (
+                            <>
+                              {" "}
+                              <span className="font-black text-base">•</span>{" "}
+                            </>
+                          )}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="mt-2 max-w-md text-sm text-paper/80">
+                      <span className="text-paper">Best for:</span> {p.bestFor}
+                    </p>
+                    <a
+                      href="#contact"
+                      className="mt-3 inline-block w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] text-paper hover:text-sand"
+                    >
+                      Inquire →
+                    </a>
                   </div>
                 ))}
               </div>
@@ -153,13 +193,12 @@ export default function Services() {
           </div>
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-0 lg:grid-cols-3">
-            {SERVICES.map((s, i) => (
+            {SERVICES.map((s) => (
               <div
                 key={s.name}
                 className="rounded-2xl border border-white/15 bg-charcoal/40 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_25px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-white/30 hover:shadow-[0_12px_50px_rgba(0,0,0,0.4),0_0_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]"
               >
-                <p className="font-display text-sm text-paper/60">{String(i + 1).padStart(2, "0")}</p>
-                <h2 className="mt-3 font-accent text-xl uppercase tracking-wide text-paper">
+                <h2 className="font-accent text-xl uppercase tracking-wide text-paper">
                   <span className="min-[1200px]:hidden">
                     {s.name.split("/").map((part, i, arr) => (
                       <span key={i}>
