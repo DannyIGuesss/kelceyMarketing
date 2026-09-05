@@ -32,7 +32,7 @@ const SERVICES = [
 const PACKAGES = [
   {
     name: "STARTER SOCIAL",
-    price: "from $750/mo",
+    price: "from $900/mo",
     tagline: "Consistent content for a polished social presence.",
     features: [
       "6–8 feed posts",
@@ -79,6 +79,96 @@ const PACKAGES = [
   },
 ];
 
+const SOCIAL_PACKAGES = [
+  {
+    name: "SOCIAL ESSENTIALS",
+    price: "from $450/mo",
+    tagline: "Simple, consistent content to keep your business active online.",
+    features: [
+      "1 feed post/week OR 1 Reel/week",
+      "captions",
+      "basic hashtag/social SEO",
+      "content scheduling",
+      "monthly content calendar",
+    ],
+    bestFor: "Small businesses that want a consistent social presence without full-service management.",
+  },
+  {
+    name: "SOCIAL GROWTH",
+    price: "from $750/mo",
+    tagline: "More frequent content to keep your audience engaged and your brand visible.",
+    features: [
+      "2–3 feed posts/week OR 2–3 Reels/week",
+      "captions",
+      "basic hashtag/social SEO",
+      "content scheduling",
+      "monthly content calendar",
+    ],
+    bestFor: "Businesses looking to increase their content frequency and build a stronger presence on social media.",
+  },
+  {
+    name: "SOCIAL FULL PRESENCE",
+    price: "from $1,000/mo",
+    tagline:
+      "A consistent, high-volume social presence designed for businesses ready to make content a major part of their brand.",
+    features: [
+      "3–4 feed posts/week OR 3–4 Reels/week",
+      "story content",
+      "captions + social SEO",
+      "content scheduling",
+      "monthly content calendar",
+      "content planning",
+    ],
+    bestFor: "Businesses that want frequent, polished content without committing to full marketing management.",
+  },
+];
+
+function PackageGroup({ label, packages }) {
+  return (
+    <div>
+      <p className="text-xs uppercase tracking-[0.15em] text-sand">{label}</p>
+      <div className="mt-8 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
+        {packages.map((p, i) => (
+          <div key={p.name} className="group relative flex h-full flex-col">
+            {p.popular && (
+              <p className="absolute bottom-full left-0 mb-2 inline-block w-fit rounded-full border border-sand px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-sand">
+                Most Popular
+              </p>
+            )}
+            <h3 className="font-accent text-2xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-3xl">
+              {String(i + 1).padStart(2, "0")} / {p.name}
+            </h3>
+            <p className="mt-2 font-accent text-base text-sand">{p.price}</p>
+            <p className="mt-3 text-sm leading-relaxed text-paper/80">{p.tagline}</p>
+            <p className="mt-3 text-sm leading-relaxed text-paper/80">
+              {p.features.map((f, idx) => (
+                <span key={f}>
+                  {f}
+                  {idx < p.features.length - 1 && (
+                    <>
+                      {" "}
+                      <span className="font-black text-base">•</span>{" "}
+                    </>
+                  )}
+                </span>
+              ))}
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-paper/80">
+              <span className="text-paper">Best for:</span> {p.bestFor}
+            </p>
+            <a
+              href="#contact"
+              className="mt-auto inline-block w-fit border-b border-paper/40 pb-0.5 pt-4 text-xs uppercase tracking-[0.2em] text-paper hover:text-sand"
+            >
+              Inquire →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Services() {
   return (
     <>
@@ -106,8 +196,8 @@ export default function Services() {
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-transparent to-charcoal" />
 
         <div className="relative z-10 px-6 py-20 md:px-10 md:py-28 lg:flex lg:min-h-[900px] lg:items-center lg:py-32">
-          <div className="w-full lg:w-2/3">
-            <div className="mx-auto max-w-xl">
+          <div className="w-full">
+            <div className="mx-auto max-w-[1200px]">
               <h2 className="text-4xl text-paper md:text-5xl" style={{ fontFamily: "var(--font-body)" }}>
                 Find your fit
               </h2>
@@ -115,46 +205,15 @@ export default function Services() {
                 Packages
               </p>
 
-              <div className="mt-12 flex flex-col divide-y-2 divide-paper/20">
-                {PACKAGES.map((p, i) => (
-                  <div key={p.name} className="group py-6 first:pt-0 last:pb-0">
-                    {p.popular && (
-                      <p className="mb-2 inline-block rounded-full border border-sand px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-sand">
-                        Most Popular
-                      </p>
-                    )}
-                    <h3 className="font-accent text-3xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-4xl">
-                      {String(i + 1).padStart(2, "0")} / {p.name}
-                    </h3>
-                    <p className="mt-2 font-accent text-xl text-sand">{p.price}</p>
-                    <p className="mt-2 max-w-md text-sm text-paper/80">{p.tagline}</p>
-                    <p className="mt-2 max-w-md text-sm text-paper/80">
-                      {p.features.map((f, idx) => (
-                        <span key={f}>
-                          {f}
-                          {idx < p.features.length - 1 && (
-                            <>
-                              {" "}
-                              <span className="font-black text-base">•</span>{" "}
-                            </>
-                          )}
-                        </span>
-                      ))}
-                    </p>
-                    <p className="mt-2 max-w-md text-sm text-paper/80">
-                      <span className="text-paper">Best for:</span> {p.bestFor}
-                    </p>
-                    <a
-                      href="#contact"
-                      className="mt-3 inline-block w-fit border-b border-paper/40 pb-0.5 text-sm uppercase tracking-[0.15em] text-paper hover:text-sand"
-                    >
-                      Inquire →
-                    </a>
-                  </div>
-                ))}
+              <div className="mt-16">
+                <PackageGroup label="Social Media Marketing" packages={PACKAGES} />
               </div>
 
-              <div className="mt-12 w-fit rounded-full bg-sand px-6 py-3 text-center">
+              <div className="mt-24 lg:mt-28">
+                <PackageGroup label="Social Posting Packages" packages={SOCIAL_PACKAGES} />
+              </div>
+
+              <div className="mt-20 w-fit rounded-full bg-sand px-6 py-3 text-center">
                 <p className="text-[11px] uppercase tracking-[0.2em] text-ink">
                   New Client Marketing Setup — $250 One-Time Onboarding Fee
                 </p>
