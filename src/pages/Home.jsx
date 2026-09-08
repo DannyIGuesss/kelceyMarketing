@@ -8,8 +8,8 @@ import servicePhoto3 from "../assets/home/three.JPG";
 
 const SERVICES = [
   { photo: servicePhoto1, label: "Social Media" },
-  { photo: servicePhoto2, label: "Event Marketing" },
-  { photo: servicePhoto3, label: "Email Marketing" },
+  { photo: servicePhoto3, label: "Content" },
+  { photo: servicePhoto2, label: "Business Growth" },
 ];
 
 export default function Home() {
@@ -166,7 +166,7 @@ export default function Home() {
                   className="aspect-[3/4] w-full rounded-[3rem] object-cover shadow-black/0 transition-all duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-black/50"
                 />
                 <p
-                  className="mt-6 font-script font-light leading-none text-paper"
+                  className="mt-6 whitespace-nowrap font-script font-light leading-none text-paper"
                   style={{ fontSize: "clamp(2rem, 3.5vw, 3.5rem)", wordSpacing: "clamp(0.5rem, 1vw, 1.5rem)" }}
                 >
                   {s.label}
