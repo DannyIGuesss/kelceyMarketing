@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import heroPhoto from "../assets/home/Kelcey2.jpg";
 import heroBgPhoto from "../assets/home/main.jpg";
 import swimmingPhoto from "../assets/home/swimming.jpg";
-import servicePhoto1 from "../assets/shared/4.jpg";
-import servicePhoto2 from "../assets/home/1.jpg";
-import servicePhoto3 from "../assets/shared/6.jpg";
+import servicePhoto1 from "../assets/home/one.JPG";
+import servicePhoto2 from "../assets/home/two.JPG";
+import servicePhoto3 from "../assets/home/three.JPG";
 
 const SERVICES = [
   { photo: servicePhoto1, label: "Social Media" },

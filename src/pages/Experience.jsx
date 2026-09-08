@@ -5,9 +5,28 @@ import pilatesPhoto from "../assets/experience/2.jpg";
 import pilatesPhotoLeft from "../assets/shared/6.jpg";
 import fvePhoto from "../assets/shared/4.jpg";
 import fueVideo from "../assets/experience/fue.mp4";
+import currentWorkVideoOne from "../assets/experience/one.mov";
+import currentWorkVideoTwo from "../assets/experience/two.MOV";
+import currentWorkVideoThree from "../assets/experience/three.mov";
 import triplePhoto from "../assets/experience/triple.JPEG";
 import heartPhoto from "../assets/experience/heart.jpg";
 import iphoneFrame from "../assets/experience/iphone.png";
+import photoOne from "../assets/home/one.JPG";
+import photoTwo from "../assets/home/two.JPG";
+import photoThree from "../assets/home/three.JPG";
+import photoFour from "../assets/experience/four.JPG";
+import photoFive from "../assets/experience/five.JPG";
+import photoSix from "../assets/experience/six.JPG";
+import photoSeven from "../assets/experience/seven.JPG";
+import photoEight from "../assets/experience/eight.JPG";
+import photoNine from "../assets/experience/nine.JPG";
+import photoTen from "../assets/experience/10.JPG";
+import photoEleven from "../assets/experience/eleven.JPG";
+import photoTwelve from "../assets/experience/twelve.jpeg";
+import photoThirteen from "../assets/experience/13.JPG";
+import photoFourteen from "../assets/experience/14.jpeg";
+import photoFifteen from "../assets/experience/15.JPG";
+import photoSixteen from "../assets/experience/16.JPG";
 
 function FueVideo({ src, className = "pointer-events-none w-full object-contain", style }) {
   const videoRef = useRef(null);
@@ -32,7 +51,7 @@ function FueVideo({ src, className = "pointer-events-none w-full object-contain"
       if (!video) return;
       video.currentTime = 0;
       video.play().catch(() => {});
-    }, 10000);
+    }, 20000);
 
     return () => window.clearInterval(interval);
   }, []);
@@ -77,6 +96,29 @@ const WORK = [
   },
 ];
 
+const CURRENT_WORK_VIDEOS = [currentWorkVideoOne, currentWorkVideoTwo, currentWorkVideoThree];
+
+// Photo Work grid: opens with one/three/two, then continues in regular
+// numeric order from four through sixteen.
+const PHOTO_WORK_IMAGES = [
+  photoOne,
+  photoThree,
+  photoTwo,
+  photoFour,
+  photoFive,
+  photoSix,
+  photoSeven,
+  photoEight,
+  photoNine,
+  photoTen,
+  photoEleven,
+  photoTwelve,
+  photoThirteen,
+  photoFourteen,
+  photoFifteen,
+  photoSixteen,
+];
+
 const REVIEWS = [
   {
     quote:
@@ -110,6 +152,64 @@ export default function Experience() {
           <p className="mx-auto mt-4 max-w-xl text-paper">
             A look at the studios I've worked with and what we built together.
           </p>
+        </div>
+      </section>
+
+      {/* Current Work — three iPhone mockups with autoplay video, same mockup
+          technique as the FUE section below (frame image on top, video clipped
+          inside a screen-shaped overflow-hidden mask, recreated Dynamic Island) */}
+      <section className="bg-charcoal px-5 pb-16 pt-24 lg:pb-20 lg:pt-32">
+        <div className="mx-auto max-w-[1400px]">
+          <h2
+            className="text-center font-script font-light leading-none text-paper"
+            style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)" }}
+          >
+            Current Work
+          </h2>
+
+          <div className="mt-12 grid grid-cols-1 items-start justify-items-center gap-10 lg:grid-cols-3 lg:gap-10">
+            {CURRENT_WORK_VIDEOS.map((src, i) => (
+              <div key={i} className="relative mx-auto w-[240px] sm:w-[250px] lg:w-[255px]">
+                <img
+                  src={iphoneFrame}
+                  alt=""
+                  className="pointer-events-none relative z-10 block h-auto w-full"
+                />
+                <div
+                  className="pointer-events-none absolute z-20 overflow-hidden bg-black"
+                  style={{ top: "1.6%", left: "7%", width: "86%", height: "97%", borderRadius: "34px" }}
+                >
+                  <FueVideo src={src} className="pointer-events-none h-full w-full object-cover" />
+                </div>
+                <div className="pointer-events-none absolute left-1/2 top-[3%] z-30 h-[4.5%] w-[30%] -translate-x-1/2 rounded-full bg-black" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Work — grid of work photos, cycling through the same three
+          photos used on the Home page (opens one/three/two, then continues
+          cycling in regular order) */}
+      <section className="bg-charcoal px-5 pb-16 pt-4 lg:pb-20">
+        <div className="mx-auto max-w-[1400px]">
+          <h2
+            className="text-center font-script font-light leading-none text-paper"
+            style={{ fontSize: "clamp(3.5rem, 6vw, 6rem)" }}
+          >
+            Photo Work
+          </h2>
+
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4">
+            {PHOTO_WORK_IMAGES.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                className="aspect-[3/4] w-full rounded-lg object-cover"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
