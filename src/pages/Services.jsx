@@ -109,21 +109,19 @@ const POSTING_SERVICES = [
   {
     eyebrow: "Content Day",
     name: "ONE-TIME CONTENT CREATION",
-    price: "from $200",
+    price: "$250",
     tagline: "A full day of content, created with your brand in mind.",
     description:
-      "Need fresh content without committing to monthly management? A Content Day gives your business a dedicated session to capture a variety of photos and videos that can be used across your social platforms.",
+      "Need fresh content without committing to monthly management? This one-time session covers a 1–1.5 hour content shoot — any additional hour is $100. I come with shot-lists and ideas ready to go, then share and deliver everything in a shared folder.",
     features: [
-      "Content planning",
-      "on-site photo + video creation",
-      "Reel concepts",
-      "short-form video footage",
-      "lifestyle + behind-the-scenes content",
-      "content ideas tailored to your brand",
-      "organized content for future use",
+      "1–1.5 hour content session",
+      "3–5 edited Reels",
+      "10–15 edited photos",
+      "shot-lists + ideas provided",
+      "delivered via a shared folder",
     ],
     bestFor: "Businesses preparing for a launch, promotion, event, or simply looking to refresh their content library.",
-    note: "Content Day pricing may vary based on location, time, and scope.",
+    note: "Additional hours are $100 each. Pricing may vary based on location, time, and scope.",
   },
 ];
 
