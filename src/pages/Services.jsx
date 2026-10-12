@@ -74,7 +74,7 @@ const POSTING_SERVICES = [
   {
     eyebrow: "Content Day",
     name: "ONE-TIME CONTENT CREATION",
-    price: "$250",
+    price: "Starting at $250",
     tagline: "A full day of content, created with your brand in mind.",
     features: [
       "1–1.5 hour content session",
