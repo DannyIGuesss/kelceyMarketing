@@ -34,8 +34,6 @@ const PACKAGES = [
     name: "STARTER SOCIAL",
     price: "from $900/mo",
     tagline: "Consistent content. Thoughtful strategy. A stronger online presence.",
-    description:
-      "A foundational social media package designed to keep your brand consistent, polished, and engaging across your platforms.",
     features: [
       "4-6 Reels",
       "2-4 Feed Posts",
@@ -52,8 +50,6 @@ const PACKAGES = [
     price: "from $1,250/mo",
     popular: true,
     tagline: "More content. More strategy. More room to grow.",
-    description:
-      "A content-forward social media package created for businesses ready to increase their visibility, connect with their audience, and take their social presence to the next level.",
     features: [
       "6-8 Reels",
       "3-5 Feed Posts",
@@ -69,8 +65,6 @@ const PACKAGES = [
     name: "STUDIO PARTNER",
     price: "$1,750/mo",
     tagline: "Full-service content + marketing, all in one place.",
-    description:
-      "Your dedicated social media and marketing partner. This package combines consistent content creation with ongoing strategy, campaigns, and marketing support.",
     features: [
       "8-10 Reels",
       "4-6 Feed Posts",
@@ -93,8 +87,6 @@ const POSTING_SERVICES = [
     name: "SOCIAL ESSENTIALS",
     price: "from $450/mo",
     tagline: "Simple, consistent content to keep your business active online.",
-    description:
-      "A straightforward content package for businesses that want to show up consistently without committing to full-service social media management.",
     features: [
       "1 Reel/week",
       "1 Feed Post/week",
@@ -111,8 +103,6 @@ const POSTING_SERVICES = [
     name: "ONE-TIME CONTENT CREATION",
     price: "$250",
     tagline: "A full day of content, created with your brand in mind.",
-    description:
-      "Need fresh content without committing to monthly management? This one-time session covers a 1–1.5 hour content shoot — any additional hour is $100. I come with shot-lists and ideas ready to go, then share and deliver everything in a shared folder.",
     features: [
       "1–1.5 hour content session",
       "3–5 edited Reels",
@@ -140,27 +130,26 @@ function PackageGroup({ label, packages }) {
                 Most Popular
               </p>
             )}
-            <h3 className="font-accent text-2xl tracking-wide text-paper transition-colors group-hover:text-sand md:text-3xl">
+            <h3
+              className="font-bold uppercase leading-none tracking-wide text-paper transition-colors group-hover:text-sand"
+              style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
+            >
               {String(i + 1).padStart(2, "0")} / {p.name}
             </h3>
-            <p className="mt-2 font-accent text-base text-sand">{p.price}</p>
-            <p className="mt-3 text-sm leading-relaxed text-paper/80">{p.tagline}</p>
-            <p className="mt-3 text-sm leading-relaxed text-paper/80">{p.description}</p>
-            <p className="mt-4 text-sm text-paper">Includes:</p>
-            <p className="mt-1 text-sm leading-relaxed text-paper/80">
-              {p.features.map((f, idx) => (
-                <span key={f}>
-                  {f}
-                  {idx < p.features.length - 1 && (
-                    <>
-                      {" "}
-                      <span className="font-black text-base">•</span>{" "}
-                    </>
-                  )}
-                </span>
-              ))}
+            <p className="mt-6 font-script text-5xl text-sand">what is this?</p>
+            <p className="mt-2 text-base font-bold uppercase leading-snug text-paper">
+              {p.tagline} {p.price}.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-paper/80">
+            <p className="mt-5 text-sm leading-relaxed text-paper/80">{p.description}</p>
+            <p className="mt-6 font-script text-5xl text-sand">includes:</p>
+            <ul className="mt-2 space-y-1.5">
+              {p.features.map((f) => (
+                <li key={f} className="text-sm font-bold uppercase tracking-wide text-paper">
+                  + {f}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm leading-relaxed text-paper/80">
               <span className="text-paper">Best for:</span> {p.bestFor}
             </p>
             <a
@@ -182,27 +171,23 @@ function PostingServiceGroup({ services }) {
       {services.map((s) => (
         <div key={s.name} className="flex h-full flex-col">
           <p className="text-xs uppercase tracking-[0.15em] text-sand">{s.eyebrow}</p>
-          <h3 className="mt-8 font-accent text-2xl tracking-wide text-paper md:text-3xl">
+          <h3 className="mt-6 font-bold uppercase leading-none tracking-wide text-paper" style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
             {s.number ? `${s.number} / ${s.name}` : s.name}
           </h3>
-          <p className="mt-2 font-accent text-base text-sand">{s.price}</p>
-          <p className="mt-3 text-sm leading-relaxed text-paper/80">{s.tagline}</p>
-          <p className="mt-3 text-sm leading-relaxed text-paper/80">{s.description}</p>
-          <p className="mt-4 text-sm text-paper">Includes:</p>
-          <p className="mt-1 text-sm leading-relaxed text-paper/80">
-            {s.features.map((f, idx) => (
-              <span key={f}>
-                {f}
-                {idx < s.features.length - 1 && (
-                  <>
-                    {" "}
-                    <span className="font-black text-base">•</span>{" "}
-                  </>
-                )}
-              </span>
-            ))}
+          <p className="mt-6 font-script text-5xl text-sand">what is this?</p>
+          <p className="mt-2 text-base font-bold uppercase leading-snug text-paper">
+            {s.tagline} {s.price}.
           </p>
-          <p className="mt-3 text-sm leading-relaxed text-paper/80">
+          <p className="mt-5 text-sm leading-relaxed text-paper/80">{s.description}</p>
+          <p className="mt-6 font-script text-5xl text-sand">includes:</p>
+          <ul className="mt-2 space-y-1.5">
+            {s.features.map((f) => (
+              <li key={f} className="text-sm font-bold uppercase tracking-wide text-paper">
+                + {f}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm leading-relaxed text-paper/80">
             <span className="text-paper">Best for:</span> {s.bestFor}
           </p>
           {s.note && <p className="mt-3 text-xs italic text-paper/60">{s.note}</p>}
@@ -247,10 +232,16 @@ export default function Services() {
         <div className="relative z-10 px-6 py-20 md:px-10 md:py-28 lg:flex lg:min-h-[900px] lg:items-center lg:py-32">
           <div className="w-full">
             <div className="mx-auto max-w-[1200px]">
-              <h2 className="text-4xl text-paper md:text-5xl" style={{ fontFamily: "var(--font-body)" }}>
-                Find your fit
+              <h2
+                className="font-bold uppercase leading-none tracking-wide text-paper"
+                style={{ fontFamily: "var(--font-body)", fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+              >
+                Our Marketing
               </h2>
-              <p className="mt-2 text-lg text-sand" style={{ fontFamily: "var(--font-body)" }}>
+              <p
+                className="font-script leading-none text-paper"
+                style={{ fontSize: "clamp(3rem, 6vw, 5rem)", marginTop: "clamp(0.25rem, 1vw, 1rem)" }}
+              >
                 Packages
               </p>
 

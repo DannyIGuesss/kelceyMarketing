@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import heroPhoto from "../assets/home/Kelcey2.jpg";
-import heroBgPhoto from "../assets/home/main.jpg";
+import heroBgPhoto from "../assets/home/hero-swans.png";
 import swimmingPhoto from "../assets/home/swimming.jpg";
 import servicePhoto1 from "../assets/home/one.JPG";
 import servicePhoto2 from "../assets/home/two.JPG";

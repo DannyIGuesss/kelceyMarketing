@@ -8,6 +8,15 @@ import fueVideo from "../assets/experience/fue.mp4";
 import currentWorkVideoOne from "../assets/experience/one.mov";
 import currentWorkVideoTwo from "../assets/experience/two.MOV";
 import currentWorkVideoThree from "../assets/experience/three.mov";
+import currentWorkVideoFour from "../assets/experience/cw4.mov";
+import currentWorkVideoFive from "../assets/experience/cw5.mov";
+import currentWorkVideoSix from "../assets/experience/cw6.mov";
+import currentWorkVideoSeven from "../assets/experience/cw7.mov";
+import currentWorkVideoEight from "../assets/experience/cw8.mov";
+import currentWorkVideoNine from "../assets/experience/cw9.mov";
+import currentWorkVideoTen from "../assets/experience/cw10.mov";
+import currentWorkVideoEleven from "../assets/experience/cw11.mov";
+import currentWorkVideoTwelve from "../assets/experience/cw12.mov";
 import triplePhoto from "../assets/experience/triple.JPEG";
 import heartPhoto from "../assets/experience/heart.jpg";
 import iphoneFrame from "../assets/experience/iphone.png";
@@ -37,30 +46,29 @@ function FueVideo({ src, className = "pointer-events-none w-full object-contain"
 
     video.muted = true;
 
-    const startVideo = async () => {
-      try {
-        await video.play();
-      } catch (error) {
-        console.log("Autoplay prevented:", error);
-      }
-    };
+    // Only play while the video is actually scrolled into view — pause it
+    // off-screen so a page with many autoplaying videos isn't decoding/
+    // rendering all of them at once.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
 
-    startVideo();
-
-    const interval = window.setInterval(() => {
-      if (!video) return;
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    }, 20000);
-
-    return () => window.clearInterval(interval);
+    return () => observer.disconnect();
   }, []);
 
   return (
     <video
       ref={videoRef}
       src={src}
-      autoPlay
+      loop
       muted
       playsInline
       preload="auto"
@@ -96,7 +104,20 @@ const WORK = [
   },
 ];
 
-const CURRENT_WORK_VIDEOS = [currentWorkVideoOne, currentWorkVideoTwo, currentWorkVideoThree];
+const CURRENT_WORK_VIDEOS = [
+  currentWorkVideoOne,
+  currentWorkVideoTwo,
+  currentWorkVideoThree,
+  currentWorkVideoFour,
+  currentWorkVideoFive,
+  currentWorkVideoSix,
+  currentWorkVideoSeven,
+  currentWorkVideoEight,
+  currentWorkVideoNine,
+  currentWorkVideoTen,
+  currentWorkVideoEleven,
+  currentWorkVideoTwelve,
+];
 
 // Photo Work grid: opens with one/three/two, then continues in regular
 // numeric order from four through sixteen.
@@ -131,6 +152,17 @@ const REVIEWS = [
       "I worked with Kelcey for my new business launch and she was so great to have on the team! Communicated quickly, brought fresh ideas to the table, and was a pleasure on shoot day. Totally recommend if you want someone who cares about what they do and help bring your thoughts to life!",
     name: "Owner",
     studio: "Fue",
+  },
+  {
+    quote:
+      "I want to thank you for reaching out to me! Working with you was such a fun and easy experience. You made me feel so comfortable in front of the camera and really took the time to understand the vision I had for my brand. You captured my studio and my work so beautifully, and I’m so happy with the content. I would definitely recommend working with you! 🤍",
+    name: "Owner",
+    studio: "Fresh Faced Studio",
+  },
+  {
+    quote: "We loved working with you!!! Thanks for bringing your artful eye to showcase our venue! 🙌",
+    name: "Team",
+    studio: "Amphitheater Of The Redwoods",
   },
 ];
 
@@ -323,7 +355,14 @@ export default function Experience() {
 
       {/* Reviews */}
       <section className="relative flex min-h-175 flex-col justify-center overflow-hidden bg-charcoal px-6 py-24 text-paper md:px-10 md:py-32">
-        <div className="relative mx-auto w-full max-w-6xl">
+        <img
+          src={triplePhoto}
+          alt=""
+          className="absolute inset-0 hidden h-full w-full object-cover opacity-99 md:block"
+        />
+        <div className="absolute inset-0 hidden bg-charcoal/70 md:block" />
+
+        <div className="relative z-10 mx-auto w-full max-w-6xl">
           <div className="px-8 text-center">
             <p className="text-lg text-sand" style={{ fontFamily: "var(--font-body)" }}>
               Kind words
@@ -334,43 +373,23 @@ export default function Experience() {
           </div>
         </div>
 
-        <div className="relative mx-auto mt-12 w-full max-w-6xl px-4">
-          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            {[0, 2].map((i) => {
-              const review = i === 0 ? REVIEWS[0] : REVIEWS[1];
-              return (
-                <div
-                  key={i}
-                  className="relative flex min-h-56 flex-col items-center justify-center overflow-hidden rounded-lg p-4 md:min-h-[400px] md:p-8"
-                >
-                  <div
-                    className="absolute inset-0 hidden opacity-99 md:block"
-                    style={{
-                      backgroundImage: `url(${triplePhoto})`,
-                      // The two seams in the source photo sit at ~32.9% and ~66.6%
-                      // of its width (not exact thirds), so each crop's background-size
-                      // is tuned per side to land exactly on the real photo boundary
-                      // instead of bleeding into the middle photo.
-                      backgroundSize: i === 0 ? "304% 100%" : "299.6% 100%",
-                      backgroundPosition: i === 0 ? "0% center" : "100% center",
-                    }}
-                  />
-                  <div className="absolute inset-0 hidden bg-charcoal/55 md:block" />
-                  {review && (
-                    <blockquote className="relative z-10 flex min-h-56 w-full max-w-xs flex-col items-center justify-between rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 p-6 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]">
-                      <p className="text-base leading-[1.7] text-paper">
-                        <span className="text-paper">"</span>
-                        {review.quote}
-                        <span className="text-paper">"</span>
-                      </p>
-                      <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
-                        {review.name} — {review.studio}
-                      </footer>
-                    </blockquote>
-                  )}
-                </div>
-              );
-            })}
+        <div className="relative z-10 mx-auto mt-12 w-full px-4 lg:w-[80%] lg:px-0">
+          <div className="grid w-full gap-10 sm:grid-cols-2 md:gap-14 lg:grid-cols-4 lg:gap-10">
+            {REVIEWS.map((review) => (
+              <blockquote
+                key={review.studio}
+                className="mx-auto flex w-full flex-col items-center justify-center rounded-2xl border border-[#e3b8c2]/25 bg-charcoal/40 px-3 py-32 text-center text-paper shadow-[0_8px_40px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#e3b8c2]/40 hover:shadow-[0_12px_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]"
+              >
+                <p className="text-paper" style={{ fontSize: "1.15rem", lineHeight: "1.35" }}>
+                  <span className="text-paper">"</span>
+                  {review.quote}
+                  <span className="text-paper">"</span>
+                </p>
+                <footer className="mt-4 text-[11px] uppercase tracking-[0.2em] text-paper/80">
+                  {review.name} — {review.studio}
+                </footer>
+              </blockquote>
+            ))}
           </div>
 
           <div className="mt-6 text-center lg:hidden">
