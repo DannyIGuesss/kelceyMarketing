@@ -2,33 +2,6 @@ import ContactForm from "../components/ContactForm";
 import soloPhoto from "../assets/services/solo.jpg";
 import oceanPhoto from "../assets/services/ocean.jpg";
 
-const SERVICES = [
-  {
-    name: "SOCIAL MEDIA",
-    items: ["Content calendar", "Posting", "Community management", "Monthly analytics"],
-  },
-  {
-    name: "EVENT MARKETING",
-    items: ["Grand openings", "Weddings", "Studio launches", "Influencer events"],
-  },
-  {
-    name: "EMAIL/PROMOTIONS",
-    items: ["Weekly email blasts", "Membership promos", "Studio updates", "Campaign support"],
-  },
-  {
-    name: "STRATEGY",
-    items:["Monthly calendar", "Competitor research", "Trend research", "Local audience strategy"]
-  },
-  {
-    name: "ANALYTICS",
-    items:["Reports every 2 weeks", "Reach/Engagement", "Reel views/Clicks", "Top content"]
-  },
-  {
-    name: "COMMUNITY/EVENTS",
-    items:["Collaborations", "Event planning assistance", "Instructor features", "Member milestone"]
-  }
-];
-
 const PACKAGES = [
   {
     name: "STARTER SOCIAL",
@@ -269,59 +242,6 @@ export default function Services() {
                 <span className="font-black text-base">•</span> First monthly marketing calendar
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
-        <div className="mx-auto max-w-6xl lg:grid lg:grid-cols-[280px_1fr] lg:gap-16">
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <p className="text-lg text-sand" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic" }}>
-              What's included
-            </p>
-            <h2
-              className="mt-2 text-3xl text-paper md:text-4xl"
-              style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}
-            >
-              Every Service,<br />One Partner
-            </h2>
-            <div className="mt-4 h-px w-10 bg-white/30" />
-            <p className="mt-4 max-w-xs text-sm text-paper/80">
-              A full suite of marketing support built specifically for boutique fitness studios.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:mt-0 lg:grid-cols-3">
-            {SERVICES.map((s) => (
-              <div
-                key={s.name}
-                className="rounded-2xl border border-white/15 bg-charcoal/40 p-8 shadow-[0_8px_40px_rgba(0,0,0,0.35),0_0_25px_rgba(255,255,255,0.1),inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:border-white/30 hover:shadow-[0_12px_50px_rgba(0,0,0,0.4),0_0_50px_rgba(255,255,255,0.25),inset_0_1px_0_rgba(255,255,255,0.16)]"
-              >
-                <h2 className="font-accent text-xl uppercase tracking-wide text-paper">
-                  <span className="min-[1200px]:hidden">
-                    {s.name.split("/").map((part, i, arr) => (
-                      <span key={i}>
-                        {part}
-                        {i < arr.length - 1 && (
-                          <>
-                            /<wbr />
-                          </>
-                        )}
-                      </span>
-                    ))}
-                  </span>
-                  <span className="hidden min-[1200px]:inline">{s.name}</span>
-                </h2>
-                <div className="mt-4 h-px w-10 bg-paper/30" />
-                <ul className="mt-4 space-y-2 text-sm text-paper/80">
-                  {s.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <span className="h-1 w-1 rounded-full bg-paper/60" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
       </section>
