@@ -109,12 +109,12 @@ function PackageGroup({ label, packages }) {
             >
               {String(i + 1).padStart(2, "0")} / {p.name}
             </h3>
-            <p className="mt-6 font-script text-5xl text-sand">what is this?</p>
+            <p className="mt-6 font-script text-3xl text-sand">what is this?</p>
             <p className="mt-2 text-base font-bold uppercase leading-snug text-paper">
               {p.tagline} {p.price}.
             </p>
             <p className="mt-5 text-sm leading-relaxed text-paper/80">{p.description}</p>
-            <p className="mt-6 font-script text-5xl text-sand">includes:</p>
+            <p className="mt-6 font-script text-3xl text-sand">includes:</p>
             <ul className="mt-2 space-y-1.5">
               {p.features.map((f) => (
                 <li key={f} className="text-sm font-bold uppercase tracking-wide text-paper">
@@ -147,12 +147,12 @@ function PostingServiceGroup({ services }) {
           <h3 className="mt-6 font-bold uppercase leading-none tracking-wide text-paper" style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
             {s.number ? `${s.number} / ${s.name}` : s.name}
           </h3>
-          <p className="mt-6 font-script text-5xl text-sand">what is this?</p>
+          <p className="mt-6 font-script text-3xl text-sand">what is this?</p>
           <p className="mt-2 text-base font-bold uppercase leading-snug text-paper">
             {s.tagline} {s.price}.
           </p>
           <p className="mt-5 text-sm leading-relaxed text-paper/80">{s.description}</p>
-          <p className="mt-6 font-script text-5xl text-sand">includes:</p>
+          <p className="mt-6 font-script text-3xl text-sand">includes:</p>
           <ul className="mt-2 space-y-1.5">
             {s.features.map((f) => (
               <li key={f} className="text-sm font-bold uppercase tracking-wide text-paper">
@@ -240,6 +240,109 @@ export default function Services() {
                 <span className="font-black text-base">•</span> Analytics setup{" "}
                 <span className="font-black text-base">•</span> Shared content folders{" "}
                 <span className="font-black text-base">•</span> First monthly marketing calendar
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="text-lg text-sand" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic" }}>
+            faqs
+          </p>
+          <h2
+            className="mt-2 text-3xl text-paper md:text-4xl"
+            style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}
+          >
+            a few things to know...
+          </h2>
+
+          <div className="mt-12 space-y-10">
+            <div>
+              <h3
+                className="text-xl text-paper md:text-2xl"
+                style={{ fontFamily: '"Bodoni Moda", serif', fontWeight: 700 }}
+              >
+                How do I know what package to choose?
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80">
+                Not sure which package is the best fit? That's okay! We'll talk through what kind
+                of support you actually need during your consultation call.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                className="text-xl text-paper md:text-2xl"
+                style={{ fontFamily: '"Bodoni Moda", serif', fontWeight: 700 }}
+              >
+                How much control over content will I have?
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80">
+                You get as much (or as little!) control over your content as you'd like!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="bg-charcoal px-6 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-[1200px]">
+          <h2
+            className="max-w-2xl text-3xl leading-tight text-paper md:text-4xl"
+            style={{ fontFamily: '"Bodoni Moda", serif', fontWeight: 600 }}
+          >
+            Here's what <span style={{ fontStyle: "italic" }}>working together</span> looks
+            like.....
+          </h2>
+
+          <div className="mt-12 space-y-10">
+            <div>
+              <h3
+                className="text-xl text-paper md:text-2xl"
+                style={{ fontFamily: '"Bodoni Moda", serif' }}
+              >
+                01. <span style={{ fontWeight: 700 }}>First, you'll submit an inquiry form.</span>
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80">
+                Click the link below to submit your inquiry form, which helps me learn a bit more
+                about you &amp; your business.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                className="text-xl text-paper md:text-2xl"
+                style={{ fontFamily: '"Bodoni Moda", serif' }}
+              >
+                02.{" "}
+                <span style={{ fontWeight: 700 }}>
+                  Then, book a consultation call or in-person meeting.
+                </span>
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80">
+                After you've submitted your inquiry form, I'll send over a booking link to
+                schedule a 30-min consultation call to cover packages, your business, and next
+                steps.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                className="text-xl text-paper md:text-2xl"
+                style={{ fontFamily: '"Bodoni Moda", serif' }}
+              >
+                03.{" "}
+                <span style={{ fontWeight: 700 }}>
+                  Choose a package, and we'll onboard you.
+                </span>
+              </h3>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-paper/80">
+                Once you've chosen a package to move forward with, you'll sign a contract and pay
+                your invoice so we can begin onboarding.
               </p>
             </div>
           </div>

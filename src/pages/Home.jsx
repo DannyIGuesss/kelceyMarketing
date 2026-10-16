@@ -39,13 +39,13 @@ export default function Home() {
           <div className="relative z-10 mx-auto w-full lg:w-auto">
             <h1
               className="font-light uppercase leading-none tracking-wide text-paper lg:whitespace-nowrap"
-              style={{ fontFamily: "var(--font-body)", fontSize: "clamp(3rem, 6.5vw, 5.5rem)" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
             >
               Heart & Glass
             </h1>
             <p
               className="font-script leading-none text-paper"
-              style={{ fontSize: "clamp(7rem, 14vw, 11.5rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
+              style={{ fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
             >
               Socials
             </p>
