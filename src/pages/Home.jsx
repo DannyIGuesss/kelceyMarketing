@@ -19,7 +19,7 @@ export default function Home() {
           ticker in a fixed h-screen flex column so the hero shrinks to fill exactly
           (100vh - ticker height) — the first screenful always ends at the ticker. */}
       <div className="flex h-screen flex-col">
-        <section className="relative flex flex-1 flex-col items-center justify-between overflow-hidden bg-charcoal px-6 py-16 text-center">
+        <section className="relative flex flex-1 flex-col items-center overflow-hidden bg-charcoal px-6 py-16 text-center">
           <img
             src={heroBgPhoto}
             alt=""
@@ -27,28 +27,16 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-charcoal/10" />
 
-          {/* Small top text */}
-          <p
-            className="relative z-10 mx-auto w-full font-semibold uppercase tracking-[0.18em] text-paper lg:w-auto lg:whitespace-nowrap"
-            style={{ fontFamily: "var(--font-body)", fontSize: "clamp(0.7rem, 1.1vw, 0.85rem)" }}
-          >
-            Heart & Glass
-          </p>
-
-          {/* Main title + overlapping script "Socials" */}
-          <div className="relative z-10 mx-auto w-full lg:w-auto">
-            <h1
-              className="font-light uppercase leading-none tracking-wide text-paper lg:whitespace-nowrap"
-              style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
-            >
-              Heart & Glass
-            </h1>
-            <p
-              className="font-script leading-none text-paper"
-              style={{ fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)", marginTop: "clamp(0.5rem, 1vw, 1.5rem)" }}
-            >
-              Socials
-            </p>
+          {/* Main title — centered in the remaining space above the tagline */}
+          <div className="relative z-10 flex w-full flex-1 items-center justify-center">
+            <div className="mx-auto w-full lg:w-auto">
+              <h1
+                className="font-light uppercase leading-none tracking-wide text-paper lg:whitespace-nowrap"
+                style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
+              >
+                Heart & Glass
+              </h1>
+            </div>
           </div>
 
           {/* Bottom tagline */}
