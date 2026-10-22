@@ -4,7 +4,7 @@ import { useState } from "react";
 const links = [
   { to: "/", label: "Intro" },
   { to: "/experience", label: "Experience" },
-  { to: "/services", label: "Services & Pricing" },
+  { to: "/services", label: "Pricing & Packages" },
 ];
 
 export default function NavBar() {

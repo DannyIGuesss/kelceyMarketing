@@ -246,10 +246,10 @@ export default function Services() {
             className="mt-2 font-light uppercase leading-none tracking-wide text-paper"
             style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 3.25vw, 2.75rem)" }}
           >
-            Services & Pricing
+            Pricing & Packages
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-paper">
-            Packages built for boutique fitness studios that need consistent content, stronger community marketing, and a clear monthly strategy.
+            Packages built for businesses that need consistent content, stronger community marketing, and a clear monthly strategy.
           </p>
         </div>
       </section>
@@ -264,19 +264,6 @@ export default function Services() {
         <div className="relative z-10 px-6 py-20 md:px-10 md:py-28 lg:flex lg:min-h-[900px] lg:items-center lg:py-32">
           <div className="w-full">
             <div className="mx-auto max-w-[1200px]">
-              <h2
-                className="text-center font-bold uppercase leading-none tracking-wide text-paper"
-                style={{ fontFamily: "var(--font-body)", fontSize: "30px" }}
-              >
-                Our Marketing
-              </h2>
-              <p
-                className="tracking-[0.15em] text-center font-script leading-none text-paper"
-                style={{ fontSize: "41px", marginTop: "clamp(0.25rem, 1vw, 1rem)" }}
-              >
-                Packages
-              </p>
-
               <div className="mt-16">
                 <PostingServiceGroup services={POSTING_SERVICES} />
               </div>
@@ -285,86 +272,6 @@ export default function Services() {
                 <PackageGroup packages={PACKAGES} />
               </div>
 
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="bg-charcoal px-6 pt-24 pb-10 md:px-10 md:pt-32 md:pb-12">
-        <div className="mx-auto max-w-[1200px]">
-          <p className="tracking-[0.15em] text-[14px] font-bold text-paper uppercase" style={faqFontStyle}>
-            FAQS
-          </p>
-          <h2 className="tracking-[0.15em] mt-2 text-[14px] text-paper uppercase" style={faqFontStyle}>
-            a few things to know...
-          </h2>
-
-          <div className="mt-12 space-y-10">
-            <div>
-              <h3 className="tracking-[0.15em] text-[14px] text-paper uppercase" style={faqFontStyle}>
-                How do I know what package to choose?
-              </h3>
-              <p className="tracking-[0.15em] mt-1 max-w-xl text-[14px] font-bold leading-relaxed text-paper uppercase">
-                Not sure which package is the best fit?
-              </p>
-              <p className="tracking-[0.15em] mt-4 max-w-sm text-[14px] font-bold leading-relaxed text-paper uppercase">
-                That's okay! We'll talk through what kind of support you actually need during your
-                consultation call.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="tracking-[0.15em] max-w-[260px] text-[14px] text-paper uppercase" style={faqFontStyle}>
-                How much control over content will I have?
-              </h3>
-              <p className="tracking-[0.15em] mt-3 max-w-xl text-[14px] font-bold leading-relaxed text-paper uppercase">
-                You get as much (or as little!) control over your content as you'd like!
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="bg-charcoal px-6 pt-10 pb-24 md:px-10 md:pt-12 md:pb-32">
-        <div className="mx-auto max-w-[1200px]">
-          <h2 className="tracking-[0.15em] text-[14px] leading-tight text-paper uppercase" style={faqFontStyle}>
-            Here's what <span style={{ fontStyle: "italic" }}>working</span>
-            <br />
-            <span style={{ fontStyle: "italic" }}>together</span> looks like.....
-          </h2>
-
-          <div className="mt-12 space-y-10">
-            <div>
-              <h3 className="tracking-[0.15em] text-[14px] text-paper uppercase" style={faqFontStyle}>
-                01. First, you'll submit an inquiry form.
-              </h3>
-              <p className="tracking-[0.15em] mt-3 max-w-xl text-[14px] font-bold leading-relaxed text-paper uppercase">
-                Click the link below to submit your inquiry form, which helps me learn a bit more
-                about you &amp; your business.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="tracking-[0.15em] text-[14px] text-paper uppercase" style={faqFontStyle}>
-                02. Then, book a consultation call or in-person meeting.
-              </h3>
-              <p className="tracking-[0.15em] mt-3 max-w-xl text-[14px] font-bold leading-relaxed text-paper uppercase">
-                After you've submitted your inquiry form, I'll send over a booking link to
-                schedule a 30-min consultation call to cover packages, your business, and next
-                steps.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="tracking-[0.15em] text-[14px] text-paper uppercase" style={faqFontStyle}>
-                03. Choose a package, and we'll onboard you.
-              </h3>
-              <p className="tracking-[0.15em] mt-3 max-w-xl text-[14px] font-bold leading-relaxed text-paper uppercase">
-                Once you've chosen a package to move forward with, you'll sign a contract and pay
-                your invoice so we can begin onboarding.
-              </p>
             </div>
           </div>
         </div>
@@ -381,7 +288,7 @@ export default function Services() {
               Book a Free Consultation
             </h2>
             <p className="tracking-[0.15em] mt-4 max-w-sm text-[14px] font-bold text-paper uppercase">
-              Tell me a bit about your studio and what you're looking for — I'll follow up to set up
+              Tell me a bit about your business and what you're looking for — I'll follow up to set up
               a time to talk.
             </p>
             <div className="mt-8 h-px w-16 bg-paper/30" />
