@@ -286,21 +286,6 @@ export default function Services() {
                 <PackageGroup label="Social Media Marketing" packages={PACKAGES} />
               </div>
 
-              <div className="mt-20 w-fit rounded-full bg-sand px-6 py-3 text-center">
-                <p className="text-[14px] uppercase tracking-[0.2em] text-ink">
-                  New Client Marketing Setup — $250 One-Time Onboarding Fee
-                </p>
-              </div>
-              <p className="tracking-[0.15em] mt-6 max-w-md text-[14px] font-bold text-paper uppercase">
-                Account audit <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Competitor research{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Brand review{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Target audience development{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Content strategy{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Account optimization{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Analytics setup{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> Shared content folders{" "}
-                <span className="tracking-[0.15em] font-black text-[14px] uppercase">•</span> First monthly marketing calendar
-              </p>
             </div>
           </div>
         </div>
