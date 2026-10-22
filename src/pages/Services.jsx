@@ -104,18 +104,17 @@ const POSTING_SERVICES = [
   },
 ];
 
-function PackageGroup({ label, packages }) {
+function PackageGroup({ packages }) {
   return (
     <div>
-      <p className="text-[14px] font-bold uppercase tracking-[0.15em] text-paper">{label}</p>
-      <div className="mt-8 grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
+      <div className="grid gap-x-12 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16">
         {packages.map((p) => (
           <div
             key={p.name}
             className={`group relative flex h-full flex-col ${p.popular ? "mt-8 lg:mt-0" : ""}`}
           >
             {p.popular && (
-              <p className="absolute bottom-full left-0 mb-2 inline-block w-fit rounded-full border border-sand px-3 py-1 text-[14px] font-semibold uppercase tracking-[0.2em] text-sand">
+              <p className="absolute bottom-full left-0 mb-4 inline-block w-fit rounded-full border border-sand px-3 py-1 text-[14px] font-semibold uppercase tracking-[0.2em] text-sand">
                 Most Popular
               </p>
             )}
@@ -283,7 +282,7 @@ export default function Services() {
               </div>
 
               <div className="mt-24 lg:mt-28">
-                <PackageGroup label="Social Media Marketing" packages={PACKAGES} />
+                <PackageGroup packages={PACKAGES} />
               </div>
 
             </div>
