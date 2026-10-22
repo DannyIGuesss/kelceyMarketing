@@ -248,9 +248,6 @@ export default function Services() {
           >
             Pricing & Packages
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-paper">
-            Packages built for businesses that need consistent content, stronger community marketing, and a clear monthly strategy.
-          </p>
         </div>
       </section>
 
