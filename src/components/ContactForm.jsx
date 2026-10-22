@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const helveticaBold = { fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontWeight: 700 };
+
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [form, setForm] = useState({
@@ -46,16 +48,18 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="text-center">
-        <p className="text-2xl text-paper" style={{ fontFamily: '"Bodoni Moda", serif', fontStyle: "italic", fontWeight: 600 }}>
+        <p className="text-[14px] text-paper uppercase tracking-[0.15em]" style={helveticaBold}>
           Thank you — message sent.
         </p>
-        <p className="mt-2 text-sm text-paper/70">Kelcey will follow up within 1–2 business days.</p>
+        <p className="mt-2 text-[14px] font-bold text-paper uppercase tracking-[0.15em]" style={helveticaBold}>
+          Kelcey will follow up within 1–2 business days.
+        </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5">
+    <form onSubmit={handleSubmit} className="grid gap-5" style={helveticaBold}>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" name="name" value={form.name} onChange={handleChange} required />
         <Field label="Email" name="email" type="email" value={form.email} onChange={handleChange} required />
@@ -95,7 +99,7 @@ export default function ContactForm() {
 
       <div aria-live="polite">
         {status === "error" && (
-          <p className="text-sm text-red-400">
+          <p className="text-[14px] font-bold text-red-400 uppercase tracking-[0.15em]" style={helveticaBold}>
             Something went wrong sending that — try again, or email heartglasssocials@gmail.com directly.
           </p>
         )}
@@ -104,7 +108,8 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="mt-2 w-fit rounded-lg border border-white/25 bg-white/10 px-8 py-3 text-[11px] uppercase tracking-[0.2em] text-paper shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/15 hover:shadow-[0_0_35px_rgba(255,255,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-60"
+        className="mt-2 w-fit rounded-lg border border-white/25 bg-white/10 px-8 py-3 text-[14px] font-bold uppercase tracking-[0.2em] text-paper shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.15)] backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:bg-white/15 hover:shadow-[0_0_35px_rgba(255,255,255,0.3),inset_0_1px_0_rgba(255,255,255,0.2)] disabled:opacity-60"
+        style={helveticaBold}
       >
         {status === "sending" ? "Sending…" : "Submit Inquiry"}
       </button>
@@ -115,7 +120,7 @@ export default function ContactForm() {
 function Field({ label, name, value, onChange, type = "text", required }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-[11px] uppercase tracking-[0.2em] text-paper/70">{label}</label>
+      <label htmlFor={name} className="mb-2 block text-[14px] font-bold uppercase tracking-[0.2em] text-paper" style={helveticaBold}>{label}</label>
       <input
         id={name}
         type={type}
@@ -123,7 +128,8 @@ function Field({ label, name, value, onChange, type = "text", required }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 font-body text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)]"
+        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 text-[14px] font-bold text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)] uppercase tracking-[0.15em]"
+        style={helveticaBold}
       />
     </div>
   );
@@ -132,7 +138,7 @@ function Field({ label, name, value, onChange, type = "text", required }) {
 function Textarea({ label, name, value, onChange, required, rows = 4 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-[11px] uppercase tracking-[0.2em] text-paper/70">
+      <label htmlFor={name} className="mb-2 block text-[14px] font-bold uppercase tracking-[0.2em] text-paper" style={helveticaBold}>
         {label}
       </label>
       <textarea
@@ -142,7 +148,8 @@ function Textarea({ label, name, value, onChange, required, rows = 4 }) {
         value={value}
         onChange={onChange}
         required={required}
-        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 font-body text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)]"
+        className="w-full rounded-lg border border-white/15 bg-charcoal/30 px-3 py-2 text-[14px] font-bold text-paper shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] outline-none backdrop-blur-md transition-colors placeholder:text-paper/40 focus:border-white/40 focus:shadow-[0_0_20px_rgba(255,255,255,0.15),inset_0_1px_0_rgba(255,255,255,0.12)] uppercase tracking-[0.15em]"
+        style={helveticaBold}
       />
     </div>
   );
