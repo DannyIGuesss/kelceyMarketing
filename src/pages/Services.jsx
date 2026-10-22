@@ -121,7 +121,7 @@ function PackageGroup({ label, packages }) {
             )}
             <h3
               className="font-bold uppercase leading-none tracking-wide text-paper transition-colors group-hover:text-sand"
-              style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}
+              style={{ fontFamily: "var(--font-body)", fontSize: "21px" }}
             >
               {p.number} / {p.name}
             </h3>
@@ -167,7 +167,7 @@ function PostingServiceGroup({ services }) {
       {services.map((s) => (
         <div key={s.name} className="flex h-full flex-col">
           <p className="text-[14px] font-bold uppercase tracking-[0.15em] text-paper">{s.eyebrow}</p>
-          <h3 className="mt-6 font-bold uppercase leading-none tracking-wide text-paper" style={{ fontFamily: "var(--font-body)", fontSize: "clamp(1.5rem, 2.5vw, 2rem)" }}>
+          <h3 className="mt-6 font-bold uppercase leading-none tracking-wide text-paper" style={{ fontFamily: "var(--font-body)", fontSize: "21px" }}>
             {s.number ? `${s.number} / ${s.name}` : s.name}
           </h3>
           <p className="tracking-[0.15em] mt-6 text-[14px] font-bold uppercase leading-snug text-paper">
@@ -266,14 +266,14 @@ export default function Services() {
           <div className="w-full">
             <div className="mx-auto max-w-[1200px]">
               <h2
-                className="font-bold uppercase leading-none tracking-wide text-paper"
-                style={{ fontFamily: "var(--font-body)", fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
+                className="text-center font-bold uppercase leading-none tracking-wide text-paper"
+                style={{ fontFamily: "var(--font-body)", fontSize: "30px" }}
               >
                 Our Marketing
               </h2>
               <p
-                className="tracking-[0.15em] font-script leading-none text-paper"
-                style={{ fontSize: "clamp(3rem, 6vw, 5rem)", marginTop: "clamp(0.25rem, 1vw, 1rem)" }}
+                className="tracking-[0.15em] text-center font-script leading-none text-paper"
+                style={{ fontSize: "41px", marginTop: "clamp(0.25rem, 1vw, 1rem)" }}
               >
                 Packages
               </p>
